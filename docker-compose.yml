@@ -1,0 +1,8 @@
+services:
+  jpedrofontes:
+    build: .
+    image: jpedrofontes
+    container_name: jpedrofontes
+    ports:
+      - "10010:3000"   # change left-hand port to whatever you use on the VPS
+    restart: unless-stopped

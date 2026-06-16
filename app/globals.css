@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* ─── Design tokens ─────────────────────────────────────────── */
+:root {
+  --bg:           #0f172a;                      /* page background  */
+  --bg-panel:     #080d19;                      /* sidebar          */
+  --bg-card:      #1e293b;                      /* card surface     */
+  --border:       #334155;                      /* subtle divider   */
+  --text:         #f1f5f9;                      /* primary text     */
+  --text-quiet:   #94a3b8;                      /* secondary text   */
+  --accent:       #38bdf8;                      /* electric blue    */
+  --accent-wash:  rgba(56, 189, 248, 0.08);     /* accent bg tint   */
+  --accent-ring:  rgba(56, 189, 248, 0.22);     /* accent border    */
+}
+
+/* ─── Tailwind custom utilities ─────────────────────────────── */
+@theme inline {
+  --color-bg:           var(--bg);
+  --color-panel:        var(--bg-panel);
+  --color-card:         var(--bg-card);
+  --color-edge:         var(--border);
+  --color-ink:          var(--text);
+  --color-quiet:        var(--text-quiet);
+  --color-accent:       var(--accent);
+  --color-accent-wash:  var(--accent-wash);
+  --color-accent-ring:  var(--accent-ring);
+  --font-sans:          var(--font-inter, "Inter", system-ui, sans-serif);
+}
+
+/* ─── Base ───────────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────── */
+@media (hover: hover) and (pointer: fine) {
+  ::-webkit-scrollbar        { width: 4px; }
+  ::-webkit-scrollbar-track  { background: transparent; }
+  ::-webkit-scrollbar-thumb  { background: var(--border); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--text-quiet); }
+}
