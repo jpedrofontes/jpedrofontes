@@ -30,7 +30,7 @@ export const cv = {
           start: "Jul 2023",
           end: "Aug 2024" as string | null,
           description:
-            "Played a key role in elevating animation quality through innovative AI solutions. Leveraged Python expertise to develop advanced Pose Estimation and Reconstruction tools, utilizing PyTorch and integrating with Procedural Animation in Unity. Engineered a cutting-edge animation search system by combining Python-based NLP with Azure.",
+                  "Within the R&D department, played a key role in elevating animation quality through innovative AI solutions. Leveraged Python expertise to develop advanced Pose Estimation and Reconstruction tools, utilizing PyTorch and integrating with Procedural Animation in Unity. Engineered a cutting-edge animation search system by combining Python-based NLP with Azure.",
         },
       ],
     },
@@ -56,7 +56,7 @@ export const cv = {
       ],
     },
     {
-      company: "CCG/ZGDV Institute — CVIG",
+        company: "CCG/ZGDV Institute",
       logo: "https://logo.clearbit.com/ccg.pt",
       location: "Guimarães, Portugal",
       roles: [
@@ -65,14 +65,14 @@ export const cv = {
           start: "Oct 2018",
           end: "Jul 2021" as string | null,
           description:
-            "Led AI research within EU-funded projects focused on Industry 4.0 and intelligent systems. Developed production-ready Python solutions bridging academic research and real-world applications. Mentored incoming research fellows and shaped the team's AI methodology across multiple project domains.",
+                  "Led AI research within the CVIG department on EU-funded projects focused on Industry 4.0 and intelligent systems. Developed production-ready Python solutions bridging academic research and real-world applications. Mentored incoming research fellows and shaped the team's AI methodology across multiple project domains.",
         },
         {
           title: "Research Fellow",
           start: "Oct 2017",
           end: "Oct 2018" as string | null,
           description:
-            "Joined as a Research Fellow contributing to EU-funded projects at the intersection of AI and criminal investigation. Built early Python-based ML pipelines and collaborated with multidisciplinary research teams.",
+                "Joined as a Research Fellow in the CVIG department contributing to EU-funded projects at the intersection of AI and criminal investigation. Built early Python-based ML pipelines and collaborated with multidisciplinary research teams.",
         },
       ],
     },
