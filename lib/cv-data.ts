@@ -7,44 +7,74 @@ export const cv = {
 
   experiences: [
     {
-      title: "Advanced Backend Engineer",
       company: "Loka Inc.",
       logo: "https://logo.clearbit.com/loka.com",
       location: "Lisbon, Portugal",
-      start: "Sep 2024",
-      end: null as string | null,
-      description:
-        "Developing scalable and maintainable backend systems using Python and modern frameworks such as FastAPI. Designed and implemented robust RESTful APIs and high-throughput data processing pipelines. Utilized Docker and cloud technologies to ensure high performance, reliability, security, and observability in production environments while providing on-call support.",
+      roles: [
+        {
+          title: "Advanced Backend Engineer",
+          start: "Sep 2024",
+          end: null as string | null,
+          description:
+            "Developing scalable and maintainable backend systems using Python and modern frameworks such as FastAPI. Designed and implemented robust RESTful APIs and high-throughput data processing pipelines. Utilized Docker and cloud technologies to ensure high performance, reliability, security, and observability in production environments while providing on-call support.",
+        },
+      ],
     },
     {
-      title: "R&D Engineer",
       company: "Swoove Studios",
       logo: "https://logo.clearbit.com/swoove.studio",
       location: "Antwerp, Belgium",
-      start: "Jul 2023",
-      end: "Aug 2024" as string | null,
-      description:
-        "Played a key role in elevating animation quality through innovative AI solutions. Leveraged Python expertise to develop advanced Pose Estimation and Reconstruction tools, utilizing PyTorch and integrating with Procedural Animation in Unity. Engineered a cutting-edge animation search system by combining Python-based NLP with Azure.",
+      roles: [
+        {
+          title: "R&D Engineer",
+          start: "Jul 2023",
+          end: "Aug 2024" as string | null,
+          description:
+            "Played a key role in elevating animation quality through innovative AI solutions. Leveraged Python expertise to develop advanced Pose Estimation and Reconstruction tools, utilizing PyTorch and integrating with Procedural Animation in Unity. Engineered a cutting-edge animation search system by combining Python-based NLP with Azure.",
+        },
+      ],
     },
     {
-      title: "Analyst / Senior Analyst",
       company: "Accenture Portugal",
       logo: "https://logo.clearbit.com/accenture.com",
       location: "Braga, Portugal",
-      start: "Sep 2021",
-      end: "Jun 2023" as string | null,
-      description:
-        "Consulted for major clients in the telecommunications and retail sectors. Gained hands-on experience in Java backend development and managed a critical order tracking system, utilizing a tech stack that included Golang and AWS. Contributed to system enhancements and provided on-call troubleshooting support.",
+      roles: [
+        {
+          title: "Senior Analyst",
+          start: "Jan 2023",
+          end: "Jun 2023" as string | null,
+          description:
+            "Promoted to Senior Analyst. Continued on the Worten engagement, contributing to the order tracking system built on Golang and AWS. Drove system improvements and provided on-call support during the final phase of the project.",
+        },
+        {
+          title: "Analyst",
+          start: "Sep 2021",
+          end: "Dec 2022" as string | null,
+          description:
+            "Consulted across two clients: Sky (Sep 2021 – Dec 2021) in telecommunications and Worten (Jan 2022 – Dec 2022) in retail. Gained hands-on Java backend experience, managed a critical order tracking system using Golang and AWS, and contributed to system enhancements with on-call troubleshooting support.",
+        },
+      ],
     },
     {
-      title: "Research Fellow / Senior AI Researcher",
       company: "CCG/ZGDV Institute",
       logo: "https://logo.clearbit.com/ccg.pt",
       location: "Guimarães, Portugal",
-      start: "Oct 2017",
-      end: "Jul 2021" as string | null,
-      description:
-        "Initially joined as a Research Fellow until 2018, then advanced to Senior AI Researcher. Contributed to EU-funded research projects, focusing on AI applications in criminal investigation and Industry 4.0. Utilized Python for developing AI solutions, bridging academia and industry. Mentored new research fellows, sharing expertise in AI methodologies and their practical applications across diverse sectors.",
+      roles: [
+        {
+          title: "Senior AI Researcher",
+          start: "Oct 2018",
+          end: "Jul 2021" as string | null,
+          description:
+            "Led AI research within EU-funded projects focused on Industry 4.0 and intelligent systems. Developed production-ready Python solutions bridging academic research and real-world applications. Mentored incoming research fellows and shaped the team's AI methodology across multiple project domains.",
+        },
+        {
+          title: "Research Fellow",
+          start: "Oct 2017",
+          end: "Oct 2018" as string | null,
+          description:
+            "Joined as a Research Fellow contributing to EU-funded projects at the intersection of AI and criminal investigation. Built early Python-based ML pipelines and collaborated with multidisciplinary research teams.",
+        },
+      ],
     },
   ],
 
@@ -188,10 +218,10 @@ export const cv = {
       name: "JORA Aesthetics",
       description:
         "Full-stack website for an aesthetics clinic in Braga. Multilingual (PT/EN), blog with CMS, contact form, Instagram feed integration, and newsletter system.",
-      url: null as string | null,
+      url: "https://jora-aesthetics.pt" as string | null,
       repo: null as string | null,
       privateRepo: true,
-      tags: ["Next.js 16", "TypeScript", "PostgreSQL", "Tailwind CSS", "Framer Motion"],
+      tags: [] as string[],
     },
     {
       name: "Breast Cancer Phenotype Classifier",
@@ -223,17 +253,18 @@ export const cv = {
   ],
 
   languages: [
-    { name: "Portuguese", level: "Native" },
-    { name: "English", level: "Fluent" },
-    { name: "Spanish", level: "Fluent" },
-    { name: "German", level: "Elementary" },
+    { name: "Portuguese",  level: "Native"       },
+    { name: "English",     level: "Fluent"        },
+    { name: "Spanish",     level: "Professional"  },
+    { name: "German",      level: "Elementary"    },
   ],
 
   licenses: ["Car driving license", "Motorcycle license (up to 125 cm³)"],
 };
 
 export type CVData = typeof cv;
-export type Experience = (typeof cv.experiences)[0];
+export type ExperienceGroup = (typeof cv.experiences)[0];
+export type ExperienceRole = (typeof cv.experiences)[0]["roles"][0];
 export type Education = (typeof cv.education)[0];
 export type SkillGroup = (typeof cv.skills)[0];
 export type Publication = (typeof cv.publications)[0];

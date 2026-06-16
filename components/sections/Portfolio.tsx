@@ -84,16 +84,18 @@ export default function Portfolio({ portfolio }: { portfolio: CVData["portfolio"
               </p>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-1.5 mt-auto">
-                {item.tags.map((tag, ti) => (
-                  <span
-                    key={ti}
-                    className={`text-[10px] font-medium px-2 py-0.5 rounded-full border ${getTagClass(tag)}`}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+              {item.tags.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 mt-auto">
+                  {item.tags.map((tag, ti) => (
+                    <span
+                      key={ti}
+                      className={`text-[10px] font-medium px-2 py-0.5 rounded-full border ${getTagClass(tag)}`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           </motion.article>
         ))}

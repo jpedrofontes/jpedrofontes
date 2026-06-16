@@ -6,6 +6,12 @@ import type { CVData } from "@/lib/cv-data";
 
 const LEVEL_WIDTH: Record<string, string> = {
   Native:      "100%",
+  C1:          "78%",
+  C2:          "92%",
+  B2:          "62%",
+  B1:          "48%",
+  A2:          "32%",
+  A1:          "18%",
   Fluent:      "82%",
   Elementary:  "22%",
   Basic:       "38%",
