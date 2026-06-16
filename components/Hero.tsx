@@ -27,7 +27,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-base font-medium text-quiet mb-7">
-          R&D Engineer · AI Researcher · Backend Engineer
+          Backend Engineer · Python · AWS / GCP
         </p>
 
         <motion.p
@@ -36,16 +36,19 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-sm leading-[1.85] text-quiet max-w-xl mb-8"
         >
-          I build things at the intersection of{" "}
-          <span className="text-ink font-medium">machine learning</span>,{" "}
-          <span className="text-ink font-medium">computer vision</span>, and{" "}
-          <span className="text-ink font-medium">backend engineering</span>.
-          Currently developing high-throughput APIs and data pipelines at{" "}
-          <span className="text-ink font-medium">Loka Inc.</span>, while finishing a Ph.D. on
-          quantitative imaging biomarkers for breast cancer at the{" "}
-          <span className="text-ink font-medium">University of Minho</span>.
-          My work has been published in journals including{" "}
-          <span className="text-ink font-medium">Computers in Biology and Medicine</span>{" "}
+          I specialise in building{" "}
+          <span className="text-ink font-medium">scalable backend systems</span> and{" "}
+          <span className="text-ink font-medium">high-throughput data pipelines</span>.
+          Currently at{" "}
+          <span className="text-ink font-medium">Loka Inc.</span> designing robust RESTful APIs
+          and cloud-native infrastructure with{" "}
+          <span className="text-ink font-medium">FastAPI</span>,{" "}
+          <span className="text-ink font-medium">AWS</span>, and{" "}
+          <span className="text-ink font-medium">GCP</span>.
+          My background in AI research at the{" "}
+          <span className="text-ink font-medium">University of Minho</span>{" "}
+          gives me a strong foundation for data-intensive problems — with work published
+          in <span className="text-ink font-medium">Computers in Biology and Medicine</span>{" "}
           and presented at the European Congress of Radiology.
         </motion.p>
 
@@ -55,10 +58,6 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.35 }}
           className="flex flex-wrap gap-2.5"
         >
-          <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-accent-wash border border-accent-ring text-accent font-medium">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            Available for consulting
-          </span>
           <a
             href="mailto:mail@jpedrofontes.com"
             className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-card border border-edge text-quiet hover:text-ink hover:border-accent-ring transition-colors"
@@ -77,7 +76,7 @@ export default function Hero() {
           </a>
           <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-card border border-edge text-quiet">
             <RiMapPinLine className="text-sm" />
-            Portugal
+            Braga, Portugal
           </span>
         </motion.div>
       </motion.div>

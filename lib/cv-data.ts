@@ -1,6 +1,6 @@
 export const cv = {
   name: "João Pedro Fontes",
-  title: "R&D Engineer & AI Researcher",
+  title: "Backend Engineer",
   email: "mail@jpedrofontes.com",
   website: "jpedrofontes.com",
   github: "jpedrofontes",
@@ -89,19 +89,19 @@ export const cv = {
   skills: [
     {
       category: "Core Competencies",
-      items: ["Machine Learning", "Deep Learning", "Computer Vision", "Backend Development"],
+      items: ["Backend Development", "API Design", "Cloud Infrastructure", "Data Pipelines", "Machine Learning"],
     },
     {
       category: "Programming Languages",
-      items: ["Python", "Golang", "C#", "JavaScript / TypeScript", "C/C++", "Java", "SQL"],
+      items: ["Python", "Golang", "SQL", "JavaScript / TypeScript", "C#", "Java"],
     },
     {
       category: "Frameworks & Tools",
-      items: ["PyTorch", "TensorFlow", "Keras", "FastAPI", "Flask", "Node.js", "React", "Next.js", "Django"],
+      items: ["FastAPI", "Flask", "Django", "PyTorch", "TensorFlow", "Keras", "Node.js", "React", "Next.js"],
     },
     {
       category: "Cloud & DevOps",
-      items: ["Docker", "AWS", "Azure"],
+      items: ["AWS", "GCP", "Docker", "Azure"],
     },
   ],
 
@@ -188,7 +188,7 @@ export const cv = {
       name: "JORA Aesthetics",
       description:
         "Full-stack website for an aesthetics clinic in Braga. Multilingual (PT/EN), blog with CMS, contact form, Instagram feed integration, and newsletter system.",
-      url: "https://jora-aesthetics.pt",
+      url: null as string | null,
       repo: null as string | null,
       privateRepo: true,
       tags: ["Next.js 16", "TypeScript", "PostgreSQL", "Tailwind CSS", "Framer Motion"],
@@ -226,7 +226,7 @@ export const cv = {
     { name: "Portuguese", level: "Native" },
     { name: "English", level: "Fluent" },
     { name: "Spanish", level: "Fluent" },
-    { name: "German", level: "Basic" },
+    { name: "German", level: "Elementary" },
   ],
 
   licenses: ["Car driving license", "Motorcycle license (up to 125 cm³)"],

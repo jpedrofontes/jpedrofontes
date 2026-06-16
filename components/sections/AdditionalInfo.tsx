@@ -5,9 +5,10 @@ import SectionHeader from "@/components/SectionHeader";
 import type { CVData } from "@/lib/cv-data";
 
 const LEVEL_WIDTH: Record<string, string> = {
-  Native:  "100%",
-  Fluent:  "82%",
-  Basic:   "38%",
+  Native:      "100%",
+  Fluent:      "82%",
+  Elementary:  "22%",
+  Basic:       "38%",
 };
 
 export default function AdditionalInfo({
