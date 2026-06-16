@@ -235,7 +235,7 @@ export const cv = {
     {
       name: "Tumor Malignancy Predictor",
       description:
-        "MSc thesis: 2D deep learning model for binary classification of breast tumors (benign vs. malignant) from MRI scans.",
+        "MSc thesis: 2D deep learning model for binary classification of breast tumors (benign vs. malignant) from mammography scans.",
       url: "https://repositorium.uminho.pt/entities/publication/3cf7198c-74fa-40ae-bc72-d63e8dd34c74",
       repo: "https://github.com/jpedrofontes/tumor-malignancy-predictor",
       privateRepo: false,

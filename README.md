@@ -25,9 +25,9 @@ Other      │ SQL · JavaScript/TypeScript · Node.js · React
 
 | Project | Description |
 |---|---|
-| 🔒 [JORA Aesthetics](https://jora-aesthetics.pt) | Full-stack multilingual clinic website — Next.js, PostgreSQL, CMS |
+| 🔒 JORA Aesthetics | Full-stack multilingual clinic website (private) |
 | [Breast Cancer Phenotype Classifier](https://github.com/jpedrofontes/phenotype-classifier) | 3D CNN classifying breast cancer MRI into 4 molecular phenotypes (PhD) |
-| [Tumor Malignancy Predictor](https://github.com/jpedrofontes/tumor-malignancy-predictor) | Binary benign/malignant classifier from 2D MRI (MSc thesis) |
+| [Tumor Malignancy Predictor](https://github.com/jpedrofontes/tumor-malignancy-predictor) | Binary benign/malignant classifier from 2D mammography scans (MSc thesis) |
 | [2015 US Flight Delays](https://github.com/jpedrofontes/2015-flight-delays-and-cancellations) | Knowledge extraction on ~6M BTS domestic flight records, built in R |
 
 ---
