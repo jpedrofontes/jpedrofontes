@@ -1,8 +1,7 @@
 export const cv = {
   name: "João Pedro Fontes",
   title: "R&D Engineer & AI Researcher",
-  email: "jpedrofontes8@gmail.com",
-  phone: "+351 93 2837601",
+  email: "mail@jpedrofontes.com",
   website: "jpedrofontes.com",
   github: "jpedrofontes",
 
@@ -10,6 +9,7 @@ export const cv = {
     {
       title: "Advanced Backend Engineer",
       company: "Loka Inc.",
+      logo: "https://logo.clearbit.com/loka.com",
       location: "Lisbon, Portugal",
       start: "Sep 2024",
       end: null as string | null,
@@ -19,6 +19,7 @@ export const cv = {
     {
       title: "R&D Engineer",
       company: "Swoove Studios",
+      logo: "https://logo.clearbit.com/swoove.studio",
       location: "Antwerp, Belgium",
       start: "Jul 2023",
       end: "Aug 2024" as string | null,
@@ -28,6 +29,7 @@ export const cv = {
     {
       title: "Analyst / Senior Analyst",
       company: "Accenture Portugal",
+      logo: "https://logo.clearbit.com/accenture.com",
       location: "Braga, Portugal",
       start: "Sep 2021",
       end: "Jun 2023" as string | null,
@@ -36,7 +38,8 @@ export const cv = {
     },
     {
       title: "Research Fellow / Senior AI Researcher",
-      company: "CCG/ZGDV Institute, University of Minho",
+      company: "CCG/ZGDV Institute",
+      logo: "https://logo.clearbit.com/ccg.pt",
       location: "Guimarães, Portugal",
       start: "Oct 2017",
       end: "Jul 2021" as string | null,
@@ -49,6 +52,7 @@ export const cv = {
     {
       degree: "Ph.D. in Information Systems and Technology",
       institution: "University of Minho",
+      logo: "https://logo.clearbit.com/uminho.pt",
       location: "Braga, Portugal",
       start: "2020",
       end: null as string | null,
@@ -60,6 +64,7 @@ export const cv = {
     {
       degree: "M.Sc. in Informatics Engineering",
       institution: "University of Minho",
+      logo: "https://logo.clearbit.com/uminho.pt",
       location: "Braga, Portugal",
       start: "2016",
       end: "2018" as string | null,
@@ -71,6 +76,7 @@ export const cv = {
     {
       degree: "B.Sc. in Informatics Engineering",
       institution: "University of Minho",
+      logo: "https://logo.clearbit.com/uminho.pt",
       location: "Braga, Portugal",
       start: "2013",
       end: "2016" as string | null,
@@ -103,6 +109,8 @@ export const cv = {
     {
       title: "Deep Learning Framework for Breast Cancer Subtypes Detection and Diagnosis",
       venue: "Biomedical Signal Processing and Control",
+      publisher: "Elsevier",
+      publisherLogo: "https://logo.clearbit.com/elsevier.com",
       year: 2026,
       status: "under review" as string | null,
       link: null as string | null,
@@ -110,6 +118,8 @@ export const cv = {
     {
       title: "A Comprehensive Framework for Detecting and Diagnosing Breast Cancer Phenotypes in MRI",
       venue: "European Congress of Radiology (ECR), Poster C-24782",
+      publisher: "ESR",
+      publisherLogo: "https://logo.clearbit.com/myesr.org",
       year: 2025,
       status: null as string | null,
       link: null as string | null,
@@ -117,6 +127,8 @@ export const cv = {
     {
       title: "Accurate Phenotyping of Luminal A Breast Cancer in Magnetic Resonance Imaging: A New 3D CNN Approach",
       venue: "Computers in Biology and Medicine, vol. 189, 109903",
+      publisher: "Elsevier",
+      publisherLogo: "https://logo.clearbit.com/elsevier.com",
       year: 2025,
       status: null as string | null,
       link: null as string | null,
@@ -124,13 +136,17 @@ export const cv = {
     {
       title: "An Innovative Faster R-CNN-Based Framework for Automated Detection of Breast Cancer Pathological Lesions in MRI",
       venue: "Journal of Imaging, vol. 9, no. 9, 169",
+      publisher: "MDPI",
+      publisherLogo: "https://logo.clearbit.com/mdpi.com",
       year: 2023,
       status: null as string | null,
       link: null as string | null,
     },
     {
       title: "Deployment Service for Scalable Distributed Deep Learning Training on Multiple Clouds",
-      venue: "11th International Conference on Cloud Computing and Services Science (CLOSER), 135–142",
+      venue: "11th Int. Conference on Cloud Computing and Services Science (CLOSER), 135–142",
+      publisher: "SCITEPRESS",
+      publisherLogo: "https://logo.clearbit.com/scitepress.org",
       year: 2021,
       status: null as string | null,
       link: null as string | null,
@@ -138,13 +154,17 @@ export const cv = {
     {
       title: "Representation Learning Approach to Breast Cancer Diagnosis",
       venue: "European Congress of Radiology (ECR), Poster C-2062",
+      publisher: "ESR",
+      publisherLogo: "https://logo.clearbit.com/myesr.org",
       year: 2019,
       status: null as string | null,
       link: null as string | null,
     },
     {
       title: "AGATHA: Face Benchmarking Dataset for Exploring Criminal Surveillance Methods on Open Source Data",
-      venue: "2018 International Conference on Graphics and Interaction (ICGI), 1–8",
+      venue: "2018 Int. Conference on Graphics and Interaction (ICGI), 1–8",
+      publisher: "ICGI",
+      publisherLogo: null as string | null,
       year: 2018,
       status: null as string | null,
       link: null as string | null,
@@ -155,10 +175,50 @@ export const cv = {
     {
       name: "AWS Certified Cloud Practitioner",
       issuer: "Amazon Web Services",
+      badgeUrl: "https://images.credly.com/size/110x110/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png",
       date: "Aug 2024",
       description:
         "Foundational understanding of IT services and their uses in the AWS Cloud. Demonstrated cloud fluency and foundational AWS knowledge.",
       link: null as string | null,
+    },
+  ],
+
+  portfolio: [
+    {
+      name: "JORA Aesthetics",
+      description:
+        "Full-stack website for an aesthetics clinic in Braga. Multilingual (PT/EN), blog with CMS, contact form, Instagram feed integration, and newsletter system.",
+      url: "https://jora-aesthetics.pt",
+      repo: null as string | null,
+      privateRepo: true,
+      tags: ["Next.js 16", "TypeScript", "PostgreSQL", "Tailwind CSS", "Framer Motion"],
+    },
+    {
+      name: "Breast Cancer Phenotype Classifier",
+      description:
+        "PhD research: classifies breast cancer MRI volumes into 4 molecular phenotypes (Luminal A/B, HER2-enriched, Triple-Negative) using 3D CNNs in TensorFlow/Keras.",
+      url: null as string | null,
+      repo: "https://github.com/jpedrofontes/phenotype-classifier",
+      privateRepo: false,
+      tags: ["Python", "TensorFlow", "Keras", "3D CNN", "Medical Imaging"],
+    },
+    {
+      name: "Tumor Malignancy Predictor",
+      description:
+        "MSc thesis: 2D deep learning model for binary classification of breast tumors (benign vs. malignant) from MRI scans.",
+      url: "https://repositorium.uminho.pt/entities/publication/3cf7198c-74fa-40ae-bc72-d63e8dd34c74",
+      repo: "https://github.com/jpedrofontes/tumor-malignancy-predictor",
+      privateRepo: false,
+      tags: ["Python", "TensorFlow", "Keras", "Computer Vision"],
+    },
+    {
+      name: "2015 US Flight Delays & Cancellations",
+      description:
+        "Knowledge extraction and data analysis on the Bureau of Transportation Statistics dataset of ~6M domestic flights. Built in R.",
+      url: null as string | null,
+      repo: "https://github.com/jpedrofontes/2015-flight-delays-and-cancellations",
+      privateRepo: false,
+      tags: ["R", "Data Analysis", "Knowledge Extraction", "Visualization"],
     },
   ],
 
@@ -178,3 +238,4 @@ export type Education = (typeof cv.education)[0];
 export type SkillGroup = (typeof cv.skills)[0];
 export type Publication = (typeof cv.publications)[0];
 export type Certification = (typeof cv.certifications)[0];
+export type PortfolioItem = (typeof cv.portfolio)[0];

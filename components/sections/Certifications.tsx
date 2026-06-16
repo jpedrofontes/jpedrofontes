@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { RiAwardLine, RiExternalLinkLine } from "react-icons/ri";
+import { RiExternalLinkLine } from "react-icons/ri";
 import SectionHeader from "@/components/SectionHeader";
 import type { CVData } from "@/lib/cv-data";
 
@@ -20,8 +20,12 @@ export default function Certifications({ certifications }: { certifications: CVD
             transition={{ duration: 0.45, delay: i * 0.08 }}
             className="rounded-xl p-5 bg-card border border-edge hover:border-accent-ring transition-colors duration-200 flex items-start gap-4"
           >
-            <div className="shrink-0 w-10 h-10 rounded-lg bg-accent-wash border border-accent-ring flex items-center justify-center mt-0.5">
-              <RiAwardLine className="text-base text-accent" />
+            <div className="shrink-0 w-14 h-14 rounded-xl overflow-hidden bg-white flex items-center justify-center mt-0.5">
+              {cert.badgeUrl ? (
+                <img src={cert.badgeUrl} alt={cert.name} className="w-12 h-12 object-contain" />
+              ) : (
+                <span className="text-xs font-bold text-accent">CERT</span>
+              )}
             </div>
 
             <div className="flex-1 min-w-0">

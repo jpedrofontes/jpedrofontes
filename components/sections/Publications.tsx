@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { RiExternalLinkLine } from "react-icons/ri";
 import SectionHeader from "@/components/SectionHeader";
+import LogoBadge from "@/components/LogoBadge";
 import type { CVData } from "@/lib/cv-data";
 
 export default function Publications({ publications }: { publications: CVData["publications"] }) {
@@ -23,6 +24,7 @@ export default function Publications({ publications }: { publications: CVData["p
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <LogoBadge src={pub.publisherLogo} alt={pub.publisher} size="sm" />
                   <span className="text-xs font-bold px-2 py-0.5 rounded text-accent bg-accent-wash">
                     {pub.year}
                   </span>

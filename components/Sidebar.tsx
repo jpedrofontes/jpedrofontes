@@ -7,11 +7,11 @@ import {
   RiBriefcaseLine,
   RiBookOpenLine,
   RiCodeSSlashLine,
+  RiLayoutMasonryLine,
   RiArticleLine,
   RiAwardLine,
   RiInformationLine,
   RiMailLine,
-  RiPhoneLine,
   RiGithubLine,
   RiGlobalLine,
   RiMenuLine,
@@ -21,12 +21,13 @@ import {
 import type { CVData } from "@/lib/cv-data";
 
 const NAV_ITEMS = [
-  { id: "experience",      label: "Experience",      Icon: RiBriefcaseLine   },
-  { id: "education",       label: "Education",       Icon: RiBookOpenLine    },
-  { id: "skills",          label: "Skills",          Icon: RiCodeSSlashLine  },
-  { id: "publications",    label: "Publications",    Icon: RiArticleLine     },
-  { id: "certifications",  label: "Certifications",  Icon: RiAwardLine       },
-  { id: "info",            label: "Additional Info", Icon: RiInformationLine },
+  { id: "experience",     label: "Experience",      Icon: RiBriefcaseLine      },
+  { id: "education",      label: "Education",       Icon: RiBookOpenLine       },
+  { id: "skills",         label: "Skills",          Icon: RiCodeSSlashLine     },
+  { id: "portfolio",      label: "Portfolio",       Icon: RiLayoutMasonryLine  },
+  { id: "certifications", label: "Certifications",  Icon: RiAwardLine          },
+  { id: "publications",   label: "Publications",    Icon: RiArticleLine        },
+  { id: "info",           label: "Additional Info", Icon: RiInformationLine    },
 ] as const;
 
 export default function Sidebar({ cv }: { cv: CVData }) {
@@ -90,13 +91,6 @@ export default function Sidebar({ cv }: { cv: CVData }) {
         >
           <RiMailLine className="text-sm shrink-0" />
           {cv.email}
-        </a>
-        <a
-          href={`tel:${cv.phone}`}
-          className="flex items-center gap-2.5 text-xs text-quiet hover:text-accent transition-colors"
-        >
-          <RiPhoneLine className="text-sm shrink-0" />
-          {cv.phone}
         </a>
         <a
           href={`https://github.com/${cv.github}`}

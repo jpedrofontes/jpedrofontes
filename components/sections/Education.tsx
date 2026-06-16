@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { RiMapPinLine } from "react-icons/ri";
 import SectionHeader from "@/components/SectionHeader";
+import LogoBadge from "@/components/LogoBadge";
 import type { CVData } from "@/lib/cv-data";
 
 const item = {
@@ -39,9 +40,12 @@ export default function Education({ education }: { education: CVData["education"
 
             <div className="ml-4 rounded-xl p-5 bg-card border border-edge transition-colors duration-200 hover:border-accent-ring">
               <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
-                <div>
-                  <h3 className="font-semibold text-sm text-ink">{edu.degree}</h3>
-                  <p className="text-sm font-medium mt-0.5 text-accent">{edu.institution}</p>
+                <div className="flex items-start gap-3">
+                  <LogoBadge src={edu.logo} alt={edu.institution} size="md" />
+                  <div>
+                    <h3 className="font-semibold text-sm text-ink">{edu.degree}</h3>
+                    <p className="text-sm font-medium mt-0.5 text-accent">{edu.institution}</p>
+                  </div>
                 </div>
                 <span className="text-xs px-2.5 py-1 rounded-full text-quiet bg-bg border border-edge shrink-0">
                   {edu.start} – {edu.end ?? "Present"}

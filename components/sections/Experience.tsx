@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { RiMapPinLine } from "react-icons/ri";
 import SectionHeader from "@/components/SectionHeader";
+import LogoBadge from "@/components/LogoBadge";
 import type { CVData } from "@/lib/cv-data";
 
 const item = {
