@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# João Pedro Fontes
 
-## Getting Started
+**Backend Engineer** · Python · FastAPI · AWS · GCP
 
-First, run the development server:
+[![Website](https://img.shields.io/badge/www-jpedrofontes.com-38bdf8?style=flat-square&logo=globe&logoColor=white)](https://jpedrofontes.com)
+[![Email](https://img.shields.io/badge/email-mail@jpedrofontes.com-38bdf8?style=flat-square&logo=gmail&logoColor=white)](mailto:mail@jpedrofontes.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-jpedrofontes-0a66c2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jpedrofontes/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+I build scalable backend systems and high-throughput data pipelines. Currently at **[Loka Inc.](https://loka.com)** developing FastAPI-based APIs and cloud-native infrastructure on AWS and GCP.
+
+Background in AI research — Ph.D. candidate at the **University of Minho**, with publications in *Computers in Biology and Medicine*, *Journal of Imaging*, and the European Congress of Radiology.
+
+### Tech I work with
+
+```
+Backend    │ Python · FastAPI · Flask · Django · Golang
+Cloud      │ AWS · GCP · Docker
+ML/DL      │ PyTorch · TensorFlow · Keras
+Other      │ SQL · JavaScript/TypeScript · Node.js · React
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Selected projects
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Project | Description |
+|---|---|
+| 🔒 [JORA Aesthetics](https://jora-aesthetics.pt) | Full-stack multilingual clinic website — Next.js, PostgreSQL, CMS |
+| [Breast Cancer Phenotype Classifier](https://github.com/jpedrofontes/phenotype-classifier) | 3D CNN classifying breast cancer MRI into 4 molecular phenotypes (PhD) |
+| [Tumor Malignancy Predictor](https://github.com/jpedrofontes/tumor-malignancy-predictor) | Binary benign/malignant classifier from 2D MRI (MSc thesis) |
+| [2015 US Flight Delays](https://github.com/jpedrofontes/2015-flight-delays-and-cancellations) | Knowledge extraction on ~6M BTS domestic flight records, built in R |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Based in Braga, Portugal 🇵🇹*

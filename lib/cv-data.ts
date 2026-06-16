@@ -56,7 +56,7 @@ export const cv = {
       ],
     },
     {
-      company: "CCG/ZGDV Institute",
+      company: "CCG/ZGDV Institute — CVIG",
       logo: "https://logo.clearbit.com/ccg.pt",
       location: "Guimarães, Portugal",
       roles: [
@@ -131,7 +131,7 @@ export const cv = {
     },
     {
       category: "Cloud & DevOps",
-      items: ["AWS", "GCP", "Docker", "Azure"],
+      items: ["AWS", "GCP", "Docker"],
     },
   ],
 
@@ -255,7 +255,7 @@ export const cv = {
   languages: [
     { name: "Portuguese",  level: "Native"       },
     { name: "English",     level: "Fluent"        },
-    { name: "Spanish",     level: "Professional"  },
+    { name: "Spanish",     level: "Fluent"        },
     { name: "German",      level: "Elementary"    },
   ],
 
