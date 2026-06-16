@@ -37,8 +37,9 @@ export default function Hero() {
           className="text-sm leading-[1.85] text-quiet max-w-xl mb-8"
         >
           I specialise in building{" "}
-          <span className="text-ink font-medium">scalable backend systems</span> and{" "}
-          <span className="text-ink font-medium">high-throughput data pipelines</span>.
+          <span className="text-ink font-medium">scalable backend systems</span>{" "}
+          and robust{" "}
+          <span className="text-ink font-medium">RESTful APIs</span>.
           Currently at{" "}
           <span className="text-ink font-medium">Loka Inc.</span> designing robust RESTful APIs
           and cloud-native infrastructure with{" "}

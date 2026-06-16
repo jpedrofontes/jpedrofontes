@@ -16,7 +16,7 @@ export const cv = {
           start: "Sep 2024",
           end: null as string | null,
           description:
-            "Developing scalable and maintainable backend systems using Python and modern frameworks such as FastAPI. Designed and implemented robust RESTful APIs and high-throughput data processing pipelines. Utilized Docker and cloud technologies to ensure high performance, reliability, security, and observability in production environments while providing on-call support.",
+                  "Developing scalable and maintainable backend systems using Python and FastAPI. Designed and implemented robust RESTful APIs with a focus on high performance, reliability, security, and observability. Utilized Docker and cloud technologies in production environments while providing on-call support.",
         },
       ],
     },
@@ -119,7 +119,7 @@ export const cv = {
   skills: [
     {
       category: "Core Competencies",
-      items: ["Backend Development", "API Design", "Cloud Infrastructure", "Data Pipelines", "Machine Learning"],
+          items: ["Backend Development", "API Design", "Cloud Infrastructure", "Machine Learning"],
     },
     {
       category: "Programming Languages",

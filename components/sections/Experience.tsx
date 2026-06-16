@@ -74,7 +74,7 @@ export default function Experience({ experiences }: { experiences: CVData["exper
                       <div key={ri} className="relative mb-4 last:mb-0">
                         {/* Role dot on sub-spine */}
                         <div
-                          className="absolute -left-[21px] top-[18px] w-2 h-2 rounded-full bg-bg"
+                          className="absolute -left-[25px] top-[22px] w-2 h-2 rounded-full bg-bg"
                           style={{ border: "1.5px solid var(--text-quiet)" }}
                         />
 

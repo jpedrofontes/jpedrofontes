@@ -21,29 +21,46 @@ const IMG_SIZE = {
   lg: "w-9 h-9",
 } as const;
 
+function getDomain(clearbitUrl: string): string | null {
+  const m = clearbitUrl.match(/clearbit\.com\/(.+)$/);
+  return m ? m[1] : null;
+}
+
 export default function LogoBadge({ src, alt, size = "md" }: LogoBadgeProps) {
-  const [failed, setFailed] = useState(false);
+  // phase 0 = try src (clearbit), 1 = try DuckDuckGo favicon, 2 = initials
+  const [phase, setPhase] = useState<0 | 1 | 2>(0);
+
+  const domain = src ? getDomain(src) : null;
+  const duckSrc = domain ? `https://icons.duckduckgo.com/ip3/${domain}.ico` : null;
+
+  const effectiveSrc =
+    phase === 0 ? src :
+    phase === 1 ? duckSrc :
+    null;
 
   const initials = alt
-    .split(/[\s/,]+/)
+    .split(/[\s/,\u2014]+/)
     .filter(Boolean)
     .slice(0, 2)
     .map((w) => w[0].toUpperCase())
     .join("");
 
-  const showImg = src && !failed;
+  function handleError() {
+    if (phase === 0 && duckSrc) setPhase(1);
+    else setPhase(2);
+  }
 
   return (
     <div
       className={`${SIZE[size]} rounded-xl border border-edge flex items-center justify-center shrink-0 overflow-hidden`}
-      style={{ backgroundColor: showImg ? "#ffffff" : undefined }}
+      style={{ backgroundColor: effectiveSrc ? "#ffffff" : undefined }}
     >
-      {showImg ? (
+      {effectiveSrc ? (
         <img
-          src={src}
+          src={effectiveSrc}
           alt={alt}
           className={`${IMG_SIZE[size]} object-contain`}
-          onError={() => setFailed(true)}
+          onError={handleError}
         />
       ) : (
         <span
