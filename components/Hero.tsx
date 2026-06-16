@@ -41,7 +41,7 @@ export default function Hero() {
           and robust{" "}
           <span className="text-ink font-medium">RESTful APIs</span>.
           Currently at{" "}
-          <span className="text-ink font-medium">Loka Inc.</span> designing robust RESTful APIs
+          <a href="https://github.com/LokaHQ" target="_blank" rel="noopener noreferrer" className="text-ink font-medium hover:text-accent transition-colors">@LokaHQ</a> designing robust RESTful APIs
           and cloud-native infrastructure with{" "}
           <span className="text-ink font-medium">FastAPI</span>,{" "}
           <span className="text-ink font-medium">AWS</span>, and{" "}
