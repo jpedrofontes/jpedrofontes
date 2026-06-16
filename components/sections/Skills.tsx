@@ -34,6 +34,28 @@ const ICON_MAP: Record<string, IconType> = {
   "Docker":                  SiDocker,
 };
 
+// Brand colors matching the README tech stack badges
+const COLOR_MAP: Record<string, string> = {
+  "Python":                  "#3776AB",
+  "Golang":                  "#00ADD8",
+  "SQL":                     "#4169E1",
+  "JavaScript / TypeScript": "#3178C6",
+  "C#":                      "#512BD4",
+  "Java":                    "#e11d22",
+  "FastAPI":                 "#009688",
+  "Flask":                   "#94a3b8",   // Flask is monochrome, use neutral
+  "Django":                  "#44B78B",   // Django brand green
+  "PyTorch":                 "#EE4C2C",
+  "TensorFlow":              "#FF6F00",
+  "Keras":                   "#D00000",
+  "Node.js":                 "#5FA04E",
+  "React":                   "#61DAFB",   // React cyan logoColor from README
+  "Next.js":                 "#e2e8f0",   // Next.js white on dark
+  "AWS":                     "#FF9900",   // AWS orange brand color
+  "GCP":                     "#4285F4",
+  "Docker":                  "#2496ED",
+};
+
 export default function Skills({ skills }: { skills: CVData["skills"] }) {
   return (
     <section id="skills" className="py-14 border-b border-edge">
@@ -54,6 +76,7 @@ export default function Skills({ skills }: { skills: CVData["skills"] }) {
             <div className="flex flex-wrap gap-2">
               {group.items.map((skill, si) => {
                 const Icon = ICON_MAP[skill];
+                const color = COLOR_MAP[skill];
                 return (
                   <motion.span
                     key={si}
@@ -61,7 +84,14 @@ export default function Skills({ skills }: { skills: CVData["skills"] }) {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: gi * 0.07 + si * 0.04 }}
-                    className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full font-medium text-accent bg-accent-wash border border-accent-ring"
+                    className={`inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full font-medium${
+                      color ? "" : " text-accent bg-accent-wash border border-accent-ring"
+                    }`}
+                    style={color ? {
+                      backgroundColor: `${color}18`,
+                      border: `1px solid ${color}40`,
+                      color: color,
+                    } : undefined}
                   >
                     {Icon && <Icon className="text-sm shrink-0" />}
                     {skill}
