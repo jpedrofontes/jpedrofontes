@@ -1,6 +1,6 @@
 # João Pedro Fontes
 
-**Backend Engineer** · @LokaHQ
+**Backend Engineer** · [@LokaHQ](https://github.com/LokaHQ)
 
 [![Website](https://img.shields.io/badge/www-jpedrofontes.com-38bdf8?style=flat-square&logo=globe&logoColor=white)](https://jpedrofontes.com)
 [![Email](https://img.shields.io/badge/email-mail@jpedrofontes.com-38bdf8?style=flat-square&logo=gmail&logoColor=white)](mailto:mail@jpedrofontes.com)
