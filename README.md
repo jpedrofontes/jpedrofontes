@@ -8,10 +8,6 @@
 
 ---
 
-I build scalable backend systems and robust APIs. Currently at **[@LokaHQ](https://github.com/LokaHQ)** working on cloud-native infrastructure with FastAPI, AWS and GCP.
-
-Background in AI research — Ph.D. candidate at the **University of Minho**, with publications in *Computers in Biology and Medicine*, *Journal of Imaging*, and the European Congress of Radiology.
-
 ### Tech Stack
 
 **Core Competencies**  
