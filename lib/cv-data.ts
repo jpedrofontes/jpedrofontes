@@ -1,6 +1,6 @@
 export const cv = {
   name: "João Pedro Fontes",
-  title: "Backend Engineer",
+  title: "Senior Backend Engineer",
   email: "mail@jpedrofontes.com",
   website: "jpedrofontes.com",
   github: "jpedrofontes",
@@ -12,9 +12,16 @@ export const cv = {
       location: "Lisbon, Portugal",
       roles: [
         {
+          title: "Senior Backend Engineer",
+          start: "Oct 2026",
+          end: null as string | null,
+          description:
+            "Promoted to Senior Backend Engineer. Develop scalable backend systems and REST APIs in Python and FastAPI, with production responsibilities covering reliability, security, observability, and on-call support.",
+        },
+        {
           title: "Advanced Backend Engineer",
           start: "Sep 2024",
-          end: null as string | null,
+          end: "Sep 2026" as string | null,
           description:
                   "Developing scalable and maintainable backend systems using Python and FastAPI. Designed and implemented robust RESTful APIs with a focus on high performance, reliability, security, and observability. Utilized Docker and cloud technologies in production environments while providing on-call support.",
         },
@@ -72,7 +79,7 @@ export const cv = {
           start: "Oct 2017",
           end: "Oct 2018" as string | null,
           description:
-                "Joined as a Research Fellow in the CVIG department contributing to EU-funded projects at the intersection of AI and criminal investigation. Built early Python-based ML pipelines and collaborated with multidisciplinary research teams.",
+                "Joined as a Research Fellow in the CVIG department contributing to EU-funded projects at the intersection of AI and criminal investigation. Developed Python-based machine-learning solutions and collaborated with multidisciplinary research teams.",
         },
       ],
     },
@@ -85,11 +92,12 @@ export const cv = {
       logo: "https://logo.clearbit.com/uminho.pt",
       location: "Braga, Portugal",
       start: "2020",
-      end: null as string | null,
+      end: "Sep 2026" as string | null,
       description:
         "Focus: Development of Quantitative Imaging Biomarkers for cancer diagnosis and monitoring, applied to breast cancer.",
       thesis:
         '"A Framework for the Development of Quantitative Imaging Biomarkers for Cancer Research"',
+      thesisLink: null as string | null,
     },
     {
       degree: "M.Sc. in Informatics Engineering",
@@ -102,6 +110,7 @@ export const cv = {
         "Specializations: Artificial Intelligence, Business Intelligence, Parallel and Distributed Computing.",
       thesis:
         '"Intelligent Medical Image Analysis: A Deep Learning Approach to Breast Cancer Diagnosis"',
+      thesisLink: "https://hdl.handle.net/1822/59906" as string | null,
     },
     {
       degree: "B.Sc. in Informatics Engineering",
@@ -113,6 +122,7 @@ export const cv = {
       description:
         "Core curriculum covering programming, algorithms, computer architecture, databases, and advanced mathematics.",
       thesis: null as string | null,
+      thesisLink: null as string | null,
     },
   ],
 
@@ -131,19 +141,19 @@ export const cv = {
     },
     {
       category: "Cloud & DevOps",
-      items: ["AWS", "GCP", "Docker"],
+      items: ["AWS", "Azure", "GCP", "Docker"],
     },
   ],
 
   publications: [
     {
       title: "Deep Learning Framework for Breast Cancer Subtypes Detection and Diagnosis",
-      venue: "Biomedical Signal Processing and Control",
+      venue: "Biomedical Signal Processing and Control, vol. 130, 111532",
       publisher: "Elsevier",
       publisherLogo: "https://logo.clearbit.com/elsevier.com",
-      year: 2026,
-      status: "under review" as string | null,
-      link: null as string | null,
+      year: 2027,
+      status: null as string | null,
+      link: "https://doi.org/10.1016/j.bspc.2026.111532" as string | null,
     },
     {
       title: "A Comprehensive Framework for Detecting and Diagnosing Breast Cancer Phenotypes in MRI",
@@ -152,7 +162,7 @@ export const cv = {
       publisherLogo: "https://logo.clearbit.com/myesr.org",
       year: 2025,
       status: null as string | null,
-      link: null as string | null,
+      link: "https://doi.org/10.26044/ecr2025/C-24782" as string | null,
     },
     {
       title: "Accurate Phenotyping of Luminal A Breast Cancer in Magnetic Resonance Imaging: A New 3D CNN Approach",
@@ -161,7 +171,7 @@ export const cv = {
       publisherLogo: "https://logo.clearbit.com/elsevier.com",
       year: 2025,
       status: null as string | null,
-      link: null as string | null,
+      link: "https://doi.org/10.1016/j.compbiomed.2025.109903" as string | null,
     },
     {
       title: "An Innovative Faster R-CNN-Based Framework for Automated Detection of Breast Cancer Pathological Lesions in MRI",
@@ -170,7 +180,7 @@ export const cv = {
       publisherLogo: "https://logo.clearbit.com/mdpi.com",
       year: 2023,
       status: null as string | null,
-      link: null as string | null,
+      link: "https://doi.org/10.3390/jimaging9090169" as string | null,
     },
     {
       title: "Deployment Service for Scalable Distributed Deep Learning Training on Multiple Clouds",
@@ -179,7 +189,7 @@ export const cv = {
       publisherLogo: "https://logo.clearbit.com/scitepress.org",
       year: 2021,
       status: null as string | null,
-      link: null as string | null,
+      link: "https://doi.org/10.5220/0010359601350142" as string | null,
     },
     {
       title: "Representation Learning Approach to Breast Cancer Diagnosis",
@@ -188,7 +198,7 @@ export const cv = {
       publisherLogo: "https://logo.clearbit.com/myesr.org",
       year: 2019,
       status: null as string | null,
-      link: null as string | null,
+      link: "https://doi.org/10.26044/ecr2019/C-2062" as string | null,
     },
     {
       title: "AGATHA: Face Benchmarking Dataset for Exploring Criminal Surveillance Methods on Open Source Data",
@@ -197,7 +207,7 @@ export const cv = {
       publisherLogo: null as string | null,
       year: 2018,
       status: null as string | null,
-      link: null as string | null,
+      link: "https://doi.org/10.1109/ITCGI.2018.8602903" as string | null,
     },
   ],
 
@@ -209,7 +219,7 @@ export const cv = {
       date: "Aug 2024",
       description:
         "Foundational understanding of IT services and their uses in the AWS Cloud. Demonstrated cloud fluency and foundational AWS knowledge.",
-      link: null as string | null,
+      link: "https://www.credly.com/badges/231b94a2-7fad-4832-a703-cfc479576929/public_url" as string | null,
     },
   ],
 

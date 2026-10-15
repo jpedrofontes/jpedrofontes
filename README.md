@@ -1,6 +1,6 @@
 # João Pedro Fontes
 
-**Backend Engineer** · Python · FastAPI · AWS · GCP
+**Senior Backend Engineer** · Python · FastAPI · AWS · GCP
 
 [![Website](https://img.shields.io/badge/www-jpedrofontes.com-38bdf8?style=flat-square&logo=globe&logoColor=white)](https://jpedrofontes.com)
 [![Email](https://img.shields.io/badge/email-mail@jpedrofontes.com-38bdf8?style=flat-square&logo=gmail&logoColor=white)](mailto:mail@jpedrofontes.com)
@@ -8,9 +8,11 @@
 
 ---
 
-I build scalable backend systems and robust APIs. Currently at **[@LokaHQ](https://github.com/LokaHQ)** working on cloud-native infrastructure with FastAPI, AWS and GCP.
+I build scalable backend systems and robust APIs. Currently a **Senior Backend Engineer** at **[@LokaHQ](https://github.com/LokaHQ)**, promoted in October 2026, working on cloud-native infrastructure with FastAPI, AWS and GCP.
 
-Background in AI research — Ph.D. candidate at the **University of Minho**, with publications in *Computers in Biology and Medicine*, *Journal of Imaging*, and the European Congress of Radiology.
+I completed my Ph.D. in Information Systems and Technology at the **University of Minho** in September 2026, with publications in *Biomedical Signal Processing and Control*, *Computers in Biology and Medicine*, *Journal of Imaging*, and the European Congress of Radiology. Latest paper: [Deep Learning Framework for Breast Cancer Subtypes Detection and Diagnosis](https://doi.org/10.1016/j.bspc.2026.111532).
+
+The LaTeX CV source is in [`cv/CV_JoaoPedroFontes.tex`](cv/CV_JoaoPedroFontes.tex). Generated PDFs and build files in `cv/build/` are ignored by Git.
 
 ### Tech Stack
 

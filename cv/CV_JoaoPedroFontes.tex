@@ -1,0 +1,116 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.7cm]{geometry}
+\usepackage{mathpazo}
+\usepackage{microtype}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{pdftitle={Joao Pedro Fontes - Senior Backend Engineer},pdfauthor={Joao Pedro Fontes}}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlist[itemize]{leftmargin=1.3em,topsep=3pt,itemsep=2pt,parsep=0pt}
+\urlstyle{same}
+\raggedright
+
+\newcommand{\cvsection}[1]{\par\addvspace{10pt}\needspace{4\baselineskip}{\large\bfseries #1}\par\nobreak\vspace{2pt}\hrule\nobreak\vspace{5pt}}
+\newcommand{\cventry}[4]{\par\addvspace{6pt}\needspace{5\baselineskip}\begin{tabularx}{\linewidth}{@{}Xr@{}}\textbf{#1} & {\small #2}\\\textit{#3} & {\small #4}\end{tabularx}\par\nobreak}
+\newcommand{\cvcompany}[2]{\par\addvspace{11pt}\needspace{6\baselineskip}\begin{tabularx}{\linewidth}{@{}Xr@{}}\textbf{#1} & {\small #2}\end{tabularx}\par\nobreak}
+\newcommand{\cvrole}[2]{\par\addvspace{2pt}\needspace{2\baselineskip}\begin{tabularx}{\linewidth}{@{}Xr@{}}\textit{#1} & {\small #2}\end{tabularx}\par\nobreak}
+\newcommand{\cvpublication}[4]{\par\addvspace{5pt}\needspace{4\baselineskip}\begin{tabularx}{\linewidth}{@{}Xr@{}}\textbf{#1} & {\small #2}\end{tabularx}\par\nobreak{\small #3.\newline\href{https://doi.org/#4}{DOI: #4~\faIcon{external-link-alt}}}\par}
+\newcommand{\cvskill}[2]{\par\addvspace{3pt}\textbf{#1:} #2\par}
+
+\begin{document}
+
+{\LARGE\bfseries Jo\~ao Pedro Fontes}\par
+{\large Senior Backend Engineer}\par
+\href{mailto:mail@jpedrofontes.com}{mail@jpedrofontes.com}\enspace\textbar\enspace +351 932 837 601\par
+\href{https://www.jpedrofontes.com}{www.jpedrofontes.com}\enspace\textbar\enspace\href{https://github.com/jpedrofontes}{github.com/jpedrofontes}
+
+\cvsection{About}
+Senior Backend Engineer with nine years of experience spanning backend development, cloud systems and applied AI research. I build Python backend services and REST APIs, with production responsibilities covering reliability, observability and on-call support. My earlier work includes animation tooling, computer vision and EU-funded research. I hold a Ph.D. in Information Systems and Technology, with research focused on deep learning for breast cancer imaging.
+
+\cvsection{Experience}
+
+\cvcompany{Loka Inc.}{Lisbon, Portugal}
+\cvrole{Senior Backend Engineer}{Oct 2026 -- Present}
+\cvrole{Advanced Backend Engineer}{Sep 2024 -- Sep 2026}
+\begin{itemize}
+    \item Develop scalable, maintainable backend systems and REST APIs in Python and FastAPI.
+    \item Use Docker and cloud technologies to deliver production services with a focus on performance, reliability, security and observability.
+    \item Provide on-call support and troubleshoot production issues.
+\end{itemize}
+
+\cvcompany{Swoove Studios}{Antwerp, Belgium}
+\cvrole{R\&D Engineer}{Jul 2023 -- Aug 2024}
+\begin{itemize}
+    \item Developed pose-estimation and reconstruction tools in Python and PyTorch to improve animation quality, integrating the results with procedural animation in Unity.
+    \item Built an animation-search system combining Python-based natural language processing with Azure services.
+\end{itemize}
+
+\cvcompany{Accenture Portugal}{Braga, Portugal}
+\cvrole{Senior Analyst}{Jan 2023 -- Jun 2023}
+\cvrole{Analyst}{Sep 2021 -- Dec 2022}
+\begin{itemize}
+    \item Consulted for Sky (Sep -- Dec 2021) in Java backend development.
+    \item Worked on Worten's Golang/AWS order-tracking system (Jan 2022 -- Jun 2023), contributing enhancements and on-call troubleshooting support.
+\end{itemize}
+
+\cvcompany{CCG/ZGDV Institute, University of Minho}{Guimar\~aes, Portugal}
+\cvrole{Senior AI Researcher}{Oct 2018 -- Jul 2021}
+\cvrole{Research Fellow}{Oct 2017 -- Oct 2018}
+\begin{itemize}
+    \item Developed Python-based AI solutions for EU-funded Industry 4.0 projects, connecting research with practical applications, and mentored incoming research fellows.
+    \item Contributed Python-based machine-learning work to multidisciplinary EU-funded research projects in AI and criminal investigation.
+\end{itemize}
+
+\newpage
+\small
+
+\cvsection{Education}
+\cventry{Ph.D. in Information Systems and Technology}{2020 -- 2026}{University of Minho}{Braga, Portugal}
+{\small Research: quantitative imaging biomarkers for breast cancer diagnosis and monitoring.\newline
+Thesis: ``A Framework for the Development of Quantitative Imaging Biomarkers for Cancer Research.''}
+
+\cventry{M.Sc. in Informatics Engineering}{2016 -- 2018}{University of Minho}{Braga, Portugal}
+{\small Specialisations: Artificial Intelligence, Business Intelligence, Parallel and Distributed Computing.\newline
+Thesis: \href{https://hdl.handle.net/1822/59906}{``Intelligent Medical Image Analysis: A Deep Learning Approach to Breast Cancer Diagnosis''~\faIcon{external-link-alt}}.}
+
+\cventry{B.Sc. in Informatics Engineering}{2013 -- 2016}{University of Minho}{Braga, Portugal}
+
+\cvsection{Skills}
+\cvskill{Languages}{Python, Golang, SQL, JavaScript/TypeScript, C\#, Java, C/C++.}
+\cvskill{Backend}{FastAPI, Flask, Django, Node.js, REST APIs.}
+\cvskill{Cloud \& Operations}{AWS, Azure, GCP, Docker, production observability, on-call support.}
+\cvskill{AI \& Computer Vision}{PyTorch, TensorFlow, Keras, deep learning, natural language processing, medical image analysis, Unity integration.}
+\cvskill{Web}{React, Next.js.}
+
+\cvsection{Publications}
+\cvpublication{Deep Learning Framework for Breast Cancer Subtypes Detection and Diagnosis}{2027}{Biomedical Signal Processing and Control, vol. 130, article 111532}{10.1016/j.bspc.2026.111532}
+
+\cvpublication{A Comprehensive Framework for Detecting and Diagnosing Breast Cancer Phenotypes in MRI}{2025}{European Congress of Radiology (ECR), Poster C-24782}{10.26044/ecr2025/C-24782}
+
+\cvpublication{Accurate Phenotyping of Luminal A Breast Cancer in Magnetic Resonance Imaging: A New 3D CNN Approach}{2025}{Computers in Biology and Medicine, vol. 189, article 109903}{10.1016/j.compbiomed.2025.109903}
+
+\cvpublication{An Innovative Faster R-CNN-Based Framework for Automated Detection of Breast Cancer Pathological Lesions in MRI}{2023}{Journal of Imaging, vol. 9, no. 9, article 169}{10.3390/jimaging9090169}
+
+\cvpublication{Deployment Service for Scalable Distributed Deep Learning Training on Multiple Clouds}{2021}{11th International Conference on Cloud Computing and Services Science (CLOSER), pp. 135--142}{10.5220/0010359601350142}
+
+\cvpublication{Representation Learning Approach to Breast Cancer Diagnosis}{2019}{European Congress of Radiology (ECR), Poster C-2062}{10.26044/ecr2019/C-2062}
+
+\cvpublication{AGATHA: Face Benchmarking Dataset for Exploring Criminal Surveillance Methods on Open Source Data}{2018}{International Conference on Graphics and Interaction (ICGI), pp. 1--8}{10.1109/ITCGI.2018.8602903}
+
+\cvsection{Certification}
+\textbf{AWS Certified Cloud Practitioner}\hfill Aug 2024\par
+\href{https://www.credly.com/badges/231b94a2-7fad-4832-a703-cfc479576929/public_url}{Verify credential \faIcon{external-link-alt}}
+
+\cvsection{Languages}
+Portuguese (native), English (fluent), Spanish (fluent), German (basic).
+
+\end{document}

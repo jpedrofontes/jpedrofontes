@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { RiMapPinLine, RiMailLine, RiGithubLine } from "react-icons/ri";
+import { cv } from "@/lib/cv-data";
 
 export default function Hero() {
   return (
@@ -27,7 +28,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-base font-medium text-quiet mb-7">
-          Backend Engineer · Python · AWS / GCP
+          {cv.title} · Python · AWS / GCP
         </p>
 
         <motion.p
@@ -46,10 +47,11 @@ export default function Hero() {
           <span className="text-ink font-medium">FastAPI</span>,{" "}
           <span className="text-ink font-medium">AWS</span>, and{" "}
           <span className="text-ink font-medium">GCP</span>.
-          My background in AI research at the{" "}
+          I completed my Ph.D. in Information Systems and Technology at the{" "}
           <span className="text-ink font-medium">University of Minho</span>{" "}
-          gives me a strong foundation for data-intensive problems — with work published
-          in <span className="text-ink font-medium">Computers in Biology and Medicine</span>{" "}
+          in September 2026. My research in breast cancer imaging has been published
+          in <span className="text-ink font-medium">Biomedical Signal Processing and Control</span>{" "}
+          and <span className="text-ink font-medium">Computers in Biology and Medicine</span>,
           and presented at the European Congress of Radiology.
         </motion.p>
 

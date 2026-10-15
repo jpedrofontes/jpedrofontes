@@ -9,9 +9,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "João Pedro Fontes — R&D Engineer & AI Researcher",
+  title: "João Pedro Fontes — Senior Backend Engineer",
   description:
-    "Personal website of João Pedro Fontes — R&D Engineer and AI Researcher specialising in Machine Learning, Computer Vision, and Backend Development.",
+    "João Pedro Fontes, Senior Backend Engineer at Loka and Ph.D. in Information Systems and Technology. Python, FastAPI, cloud systems, and applied AI research.",
   keywords: [
     "João Pedro Fontes",
     "AI Researcher",
@@ -19,14 +19,15 @@ export const metadata: Metadata = {
     "Machine Learning",
     "Computer Vision",
     "Backend Development",
+    "Senior Backend Engineer",
     "Python",
     "PyTorch",
   ],
   authors: [{ name: "João Pedro Fontes", url: "https://jpedrofontes.com" }],
   openGraph: {
-    title: "João Pedro Fontes — R&D Engineer & AI Researcher",
+    title: "João Pedro Fontes — Senior Backend Engineer",
     description:
-      "Personal website of João Pedro Fontes — R&D Engineer and AI Researcher.",
+      "Senior Backend Engineer at Loka with a Ph.D. in Information Systems and Technology, specialising in Python backend systems and applied AI research.",
     url: "https://jpedrofontes.com",
     siteName: "jpedrofontes.com",
     type: "website",

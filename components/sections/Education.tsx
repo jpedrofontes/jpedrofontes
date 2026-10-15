@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { RiMapPinLine } from "react-icons/ri";
+import { RiMapPinLine, RiExternalLinkLine } from "react-icons/ri";
 import SectionHeader from "@/components/SectionHeader";
 import LogoBadge from "@/components/LogoBadge";
 import type { CVData } from "@/lib/cv-data";
@@ -64,7 +64,11 @@ export default function Education({ education }: { education: CVData["education"
                   className="text-xs mt-3 italic text-quiet leading-relaxed pl-3"
                   style={{ borderLeft: "2px solid var(--accent-ring)" }}
                 >
-                  Thesis: {edu.thesis}
+                  Thesis: {edu.thesisLink ? (
+                    <a href={edu.thesisLink} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">
+                      {edu.thesis} <RiExternalLinkLine className="inline" aria-hidden="true" />
+                    </a>
+                  ) : edu.thesis}
                 </p>
               )}
             </div>

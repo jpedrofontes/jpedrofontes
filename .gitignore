@@ -20,6 +20,9 @@
 # production
 /build
 
+# CV build output
+/cv/build/
+
 # misc
 .DS_Store
 *.pem
