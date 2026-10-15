@@ -10,32 +10,6 @@
 
 [CV (PDF)](https://jpedrofontes.com/api/cv)
 
-### Releases and Deployment
-
-Published stable GitHub releases with `vX.Y.Z` tags trigger `.github/workflows/release.yml`. Prereleases and drafts do not deploy. The dedicated self-hosted runner is `jpedrofontes-prod`, running as `gh-runner`; no deployment runs on pull requests. Deployment jobs are serialized.
-
-The job first runs the release-helper tests, then attaches `CV_JoaoPedroFontes.pdf` and `CV_JoaoPedroFontes.json` to the release. The JSON manifest records hashes of every tracked input under `cv/`, the Tectonic compiler version, and the generated PDF. A matching verified PDF from an earlier stable release is reused without compilation. Every stable release still receives the PDF asset so the latest-release download URL remains valid. Failed or incomplete publishing stops deployment and can be retried.
-
-The website's `/api/cv` download endpoint redirects to the newest stable GitHub release that already has a PDF asset. Release metadata is cached for up to five minutes. If a new release is still publishing or its job fails, the previous published PDF remains selectable. The legacy `/Curriculum_Vitae.pdf` URL redirects to this endpoint too. Do not deploy the new download link before the first release has its PDF asset.
-
-Runner prerequisites: Node.js 20+, Git, Docker with Compose, curl, flock, and Tectonic **0.17.0** at `/opt/jpedrofontes-tools/bin/tectonic`. The runner needs Docker access and write access to the ignored `internal/production/` directory for the deployment lock. Registration credentials belong in the runner installation, never in the repository. The workflow uses its short-lived `GITHUB_TOKEN` with `contents: write` to publish release assets.
-
-`scripts/deploy.sh` builds a temporary archive of the release tag, leaving the working tree and the current container untouched until the image builds. Production uses `scripts/compose.production.yml` on `127.0.0.1:10006`, waits for an HTTP health check, and automatically restores the `jpedrofontes:rollback` image if replacement fails. The original root Compose file is not used by release deployments. Set `JPEDROFONTES_BUILD_ONLY=1` to build without replacing production.
-
-After committing and pushing the workflow and release source, publish a stable release:
-
-```sh
-gh release create vX.Y.Z --target main --title vX.Y.Z --generate-notes
-```
-
-Retry an existing stable release through Actions, without creating another tag:
-
-```sh
-gh workflow run release.yml -f tag=vX.Y.Z
-```
-
-Run local checks with `node --test tests/*.test.mjs`, `node node_modules/typescript/bin/tsc --noEmit --incremental false`, and `npm run build`. Keep the `cv/` inputs self-contained; changes to those inputs or the pinned compiler version invalidate PDF reuse. Deployment code is validated with mocked Docker commands; publishing tests use a local GitHub API fixture and never create real releases.
-
 ### Tech Stack
 
 **Core Competencies**  
