@@ -15,12 +15,6 @@ const SIZE = {
   lg: "w-14 h-14",
 } as const;
 
-const IMG_SIZE = {
-  sm: "w-6 h-6",
-  md: "w-7 h-7",
-  lg: "w-9 h-9",
-} as const;
-
 function getDomain(clearbitUrl: string): string | null {
   const m = clearbitUrl.match(/clearbit\.com\/(.+)$/);
   return m ? m[1] : null;
@@ -59,7 +53,7 @@ export default function LogoBadge({ src, alt, size = "md" }: LogoBadgeProps) {
         <img
           src={effectiveSrc}
           alt={alt}
-          className={`${IMG_SIZE[size]} object-contain`}
+          className="w-full h-full object-contain"
           onError={handleError}
         />
       ) : (

@@ -8,7 +8,7 @@ export const cv = {
   experiences: [
     {
       company: "Loka Inc.",
-      logo: "https://logo.clearbit.com/loka.com",
+      logo: "/logos/loka.jpg",
       location: "Lisbon, Portugal",
       roles: [
         {
@@ -29,7 +29,7 @@ export const cv = {
     },
     {
       company: "Swoove Studios",
-      logo: "https://logo.clearbit.com/swoove.studio",
+      logo: "/logos/swoove.jpg",
       location: "Antwerp, Belgium",
       roles: [
         {
@@ -43,7 +43,7 @@ export const cv = {
     },
     {
       company: "Accenture Portugal",
-      logo: "https://logo.clearbit.com/accenture.com",
+      logo: "/logos/accenture.jpg",
       location: "Braga, Portugal",
       roles: [
         {
@@ -64,7 +64,7 @@ export const cv = {
     },
     {
         company: "CCG/ZGDV Institute",
-      logo: "https://logo.clearbit.com/ccg.pt",
+      logo: "/logos/ccg.jpg",
       location: "Guimarães, Portugal",
       roles: [
         {
@@ -89,10 +89,10 @@ export const cv = {
     {
       degree: "Ph.D. in Information Systems and Technology",
       institution: "University of Minho",
-      logo: "https://logo.clearbit.com/uminho.pt",
+      logo: "/logos/uminho.png",
       location: "Braga, Portugal",
       start: "2020",
-      end: "Sep 2026" as string | null,
+      end: "2026" as string | null,
       description:
         "Focus: Development of Quantitative Imaging Biomarkers for cancer diagnosis and monitoring, applied to breast cancer.",
       thesis:
@@ -102,7 +102,7 @@ export const cv = {
     {
       degree: "M.Sc. in Informatics Engineering",
       institution: "University of Minho",
-      logo: "https://logo.clearbit.com/uminho.pt",
+      logo: "/logos/uminho.png",
       location: "Braga, Portugal",
       start: "2016",
       end: "2018" as string | null,
@@ -115,7 +115,7 @@ export const cv = {
     {
       degree: "B.Sc. in Informatics Engineering",
       institution: "University of Minho",
-      logo: "https://logo.clearbit.com/uminho.pt",
+      logo: "/logos/uminho.png",
       location: "Braga, Portugal",
       start: "2013",
       end: "2016" as string | null,
@@ -150,7 +150,7 @@ export const cv = {
       title: "Deep Learning Framework for Breast Cancer Subtypes Detection and Diagnosis",
       venue: "Biomedical Signal Processing and Control, vol. 130, 111532",
       publisher: "Elsevier",
-      publisherLogo: "https://logo.clearbit.com/elsevier.com",
+      publisherLogo: "/logos/elsevier.png",
       year: 2027,
       status: null as string | null,
       link: "https://doi.org/10.1016/j.bspc.2026.111532" as string | null,
@@ -159,7 +159,7 @@ export const cv = {
       title: "A Comprehensive Framework for Detecting and Diagnosing Breast Cancer Phenotypes in MRI",
       venue: "European Congress of Radiology (ECR), Poster C-24782",
       publisher: "ESR",
-      publisherLogo: "https://logo.clearbit.com/myesr.org",
+      publisherLogo: "/logos/esr.png",
       year: 2025,
       status: null as string | null,
       link: "https://doi.org/10.26044/ecr2025/C-24782" as string | null,
@@ -168,7 +168,7 @@ export const cv = {
       title: "Accurate Phenotyping of Luminal A Breast Cancer in Magnetic Resonance Imaging: A New 3D CNN Approach",
       venue: "Computers in Biology and Medicine, vol. 189, 109903",
       publisher: "Elsevier",
-      publisherLogo: "https://logo.clearbit.com/elsevier.com",
+      publisherLogo: "/logos/elsevier.png",
       year: 2025,
       status: null as string | null,
       link: "https://doi.org/10.1016/j.compbiomed.2025.109903" as string | null,
@@ -177,7 +177,7 @@ export const cv = {
       title: "An Innovative Faster R-CNN-Based Framework for Automated Detection of Breast Cancer Pathological Lesions in MRI",
       venue: "Journal of Imaging, vol. 9, no. 9, 169",
       publisher: "MDPI",
-      publisherLogo: "https://logo.clearbit.com/mdpi.com",
+      publisherLogo: "/logos/mdpi.png",
       year: 2023,
       status: null as string | null,
       link: "https://doi.org/10.3390/jimaging9090169" as string | null,
@@ -186,7 +186,7 @@ export const cv = {
       title: "Deployment Service for Scalable Distributed Deep Learning Training on Multiple Clouds",
       venue: "11th Int. Conference on Cloud Computing and Services Science (CLOSER), 135–142",
       publisher: "SCITEPRESS",
-      publisherLogo: "https://logo.clearbit.com/scitepress.org",
+      publisherLogo: "/logos/scitepress.png",
       year: 2021,
       status: null as string | null,
       link: "https://doi.org/10.5220/0010359601350142" as string | null,
@@ -195,7 +195,7 @@ export const cv = {
       title: "Representation Learning Approach to Breast Cancer Diagnosis",
       venue: "European Congress of Radiology (ECR), Poster C-2062",
       publisher: "ESR",
-      publisherLogo: "https://logo.clearbit.com/myesr.org",
+      publisherLogo: "/logos/esr.png",
       year: 2019,
       status: null as string | null,
       link: "https://doi.org/10.26044/ecr2019/C-2062" as string | null,
@@ -203,8 +203,8 @@ export const cv = {
     {
       title: "AGATHA: Face Benchmarking Dataset for Exploring Criminal Surveillance Methods on Open Source Data",
       venue: "2018 Int. Conference on Graphics and Interaction (ICGI), 1–8",
-      publisher: "ICGI",
-      publisherLogo: null as string | null,
+      publisher: "IEEE",
+      publisherLogo: "/logos/ieee.png" as string | null,
       year: 2018,
       status: null as string | null,
       link: "https://doi.org/10.1109/ITCGI.2018.8602903" as string | null,
