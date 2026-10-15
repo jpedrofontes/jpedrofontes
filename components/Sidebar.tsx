@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { SiGooglescholar, SiOrcid } from "react-icons/si";
 import {
   RiBriefcaseLine,
   RiBookOpenLine,
@@ -109,6 +110,24 @@ export default function Sidebar({ cv }: { cv: CVData }) {
         >
           <RiGlobalLine className="text-sm shrink-0" />
           {cv.website}
+        </a>
+        <a
+          href={cv.orcid}
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-2.5 text-xs text-quiet hover:text-accent transition-colors"
+        >
+          <SiOrcid className="text-sm shrink-0" aria-hidden="true" />
+          ORCID
+        </a>
+        <a
+          href={cv.googleScholar}
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-2.5 text-xs text-quiet hover:text-accent transition-colors"
+        >
+          <SiGooglescholar className="text-sm shrink-0" aria-hidden="true" />
+          Google Scholar
         </a>
       </div>
 

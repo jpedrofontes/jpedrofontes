@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { RiMapPinLine, RiMailLine, RiGithubLine } from "react-icons/ri";
+import { SiGooglescholar, SiOrcid } from "react-icons/si";
 import { cv } from "@/lib/cv-data";
 
 export default function Hero() {
@@ -28,7 +29,15 @@ export default function Hero() {
         </h1>
 
         <p className="text-base font-medium text-quiet mb-7">
-          {cv.title} · Python · AWS / GCP
+          {cv.title}{" "}
+          <a
+            href="https://loka.com"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-accent transition-colors"
+          >
+            @ Loka, Inc
+          </a>
         </p>
 
         <motion.p
@@ -37,22 +46,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-sm leading-[1.85] text-quiet max-w-xl mb-8"
         >
-          I specialise in building{" "}
-          <span className="text-ink font-medium">scalable backend systems</span>{" "}
-          and robust{" "}
-          <span className="text-ink font-medium">RESTful APIs</span>.
-          Currently at{" "}
-          <a href="https://github.com/LokaHQ" target="_blank" rel="noopener noreferrer" className="text-ink font-medium hover:text-accent transition-colors">@LokaHQ</a> designing robust RESTful APIs
-          and cloud-native infrastructure with{" "}
-          <span className="text-ink font-medium">FastAPI</span>,{" "}
-          <span className="text-ink font-medium">AWS</span>, and{" "}
-          <span className="text-ink font-medium">GCP</span>.
-          I completed my Ph.D. in Information Systems and Technology at the{" "}
-          <span className="text-ink font-medium">University of Minho</span>{" "}
-          in September 2026. My research in breast cancer imaging has been published
-          in <span className="text-ink font-medium">Biomedical Signal Processing and Control</span>{" "}
-          and <span className="text-ink font-medium">Computers in Biology and Medicine</span>,
-          and presented at the European Congress of Radiology.
+          {cv.about}
         </motion.p>
 
         <motion.div
@@ -76,6 +70,24 @@ export default function Hero() {
           >
             <RiGithubLine className="text-sm" />
             jpedrofontes
+          </a>
+          <a
+            href={cv.orcid}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-card border border-edge text-quiet hover:text-ink hover:border-accent-ring transition-colors"
+          >
+            <SiOrcid className="text-sm shrink-0" aria-hidden="true" />
+            ORCID
+          </a>
+          <a
+            href={cv.googleScholar}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-card border border-edge text-quiet hover:text-ink hover:border-accent-ring transition-colors"
+          >
+            <SiGooglescholar className="text-sm shrink-0" aria-hidden="true" />
+            Google Scholar
           </a>
           <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-card border border-edge text-quiet">
             <RiMapPinLine className="text-sm" />

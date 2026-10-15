@@ -4,6 +4,10 @@ export const cv = {
   email: "mail@jpedrofontes.com",
   website: "jpedrofontes.com",
   github: "jpedrofontes",
+  orcid: "https://orcid.org/0000-0003-4773-5576",
+  googleScholar: "https://scholar.google.pt/citations?user=p02VB90AAAAJ&hl=en",
+  about:
+    "Senior Backend Engineer with nine years of experience spanning backend development, cloud systems and applied AI research. I build Python backend services and REST APIs, with production responsibilities covering reliability, observability and on-call support. My earlier work includes animation tooling, computer vision and EU-funded research. I hold a Ph.D. in Information Systems and Technology, with research focused on deep learning for breast cancer imaging.",
 
   experiences: [
     {

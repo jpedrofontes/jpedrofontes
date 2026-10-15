@@ -5,6 +5,7 @@
 [![Website](https://img.shields.io/badge/www-jpedrofontes.com-38bdf8?style=flat-square&logo=globe&logoColor=white)](https://jpedrofontes.com)
 [![Email](https://img.shields.io/badge/email-mail@jpedrofontes.com-38bdf8?style=flat-square&logo=gmail&logoColor=white)](mailto:mail@jpedrofontes.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-jpedrofontes-0a66c2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jpedrofontes/)
+[![ORCID](https://img.shields.io/badge/ORCID-0000--0003--4773--5576-A6CE39?style=flat-square&logo=orcid&logoColor=white)](https://orcid.org/0000-0003-4773-5576)
 
 ---
 
