@@ -1,16 +1,12 @@
 # João Pedro Fontes
 
-**Senior Backend Engineer** · Python · FastAPI · AWS · GCP
+**Senior Backend Engineer** · [@LokaHQ](https://github.com/LokaHQ)
 
 [![Website](https://img.shields.io/badge/www-jpedrofontes.com-38bdf8?style=flat-square&logo=globe&logoColor=white)](https://jpedrofontes.com)
 [![Email](https://img.shields.io/badge/email-mail@jpedrofontes.com-38bdf8?style=flat-square&logo=gmail&logoColor=white)](mailto:mail@jpedrofontes.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-jpedrofontes-0a66c2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jpedrofontes/)
 
 ---
-
-I build scalable backend systems and robust APIs. Currently a **Senior Backend Engineer** at **[@LokaHQ](https://github.com/LokaHQ)**, promoted in October 2026, working on cloud-native infrastructure with FastAPI, AWS and GCP.
-
-I completed my Ph.D. in Information Systems and Technology at the **University of Minho** in September 2026, with publications in *Biomedical Signal Processing and Control*, *Computers in Biology and Medicine*, *Journal of Imaging*, and the European Congress of Radiology. Latest paper: [Deep Learning Framework for Breast Cancer Subtypes Detection and Diagnosis](https://doi.org/10.1016/j.bspc.2026.111532).
 
 The LaTeX CV source is in [`cv/CV_JoaoPedroFontes.tex`](cv/CV_JoaoPedroFontes.tex). Generated PDFs and build files in `cv/build/` are ignored by Git.
 
@@ -25,10 +21,9 @@ The LaTeX CV source is in [`cv/CV_JoaoPedroFontes.tex`](cv/CV_JoaoPedroFontes.te
 **Programming Languages**  
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Go](https://img.shields.io/badge/Golang-00ADD8?style=flat-square&logo=go&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/SQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![C#](https://img.shields.io/badge/C%23-512BD4?style=flat-square&logo=dotnet&logoColor=white)
-![Java](https://img.shields.io/badge/Java-e11d22?style=flat-square&logo=openjdk&logoColor=white)
 
 **Frameworks & Tools**  
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
@@ -51,8 +46,9 @@ The LaTeX CV source is in [`cv/CV_JoaoPedroFontes.tex`](cv/CV_JoaoPedroFontes.te
 | Project | Description |
 |---|---|
 | [JORA Aesthetics](https://jora-aesthetics.pt) | Full-stack multilingual clinic website |
+| [Jellyfin Movie Ratings Plugin](https://github.com/jpedrofontes/jellyfin-ratings-plugin) | A Jellyfin plugin that syncs IMDb ratings, fetches RT audience and critic scores, and maintains an IMDb Top 250 playlist |
 | [Breast Cancer Phenotype Classifier](https://github.com/jpedrofontes/phenotype-classifier) | 3D CNN classifying breast cancer MRI into 4 molecular phenotypes (PhD) |
-| [Tumor Malignancy Predictor](https://github.com/jpedrofontes/tumor-malignancy-predictor) | Binary benign/malignant classifier from 2D mammography scans (MSc thesis) |
+| [Tumor Malignancy Predictor](https://github.com/jpedrofontes/tumor-malignancy-predictor) | Binary benign/malignant classifier from 2D mammography scans (MSc) |
 | [2015 US Flight Delays](https://github.com/jpedrofontes/2015-flight-delays-and-cancellations) | Knowledge extraction on ~6M BTS domestic flight records, built in R |
 
 ---
