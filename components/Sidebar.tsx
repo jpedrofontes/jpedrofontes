@@ -144,8 +144,7 @@ export default function Sidebar({ cv }: { cv: CVData }) {
       {/* ── Download CV ──────────────────────────────────────── */}
       <div className="px-5 pb-8">
         <a
-          href="/Curriculum_Vitae.pdf"
-          download
+          href="/api/cv"
           className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg text-xs font-medium text-accent border border-accent-ring hover:bg-accent-wash transition-colors"
         >
           <RiDownload2Line className="text-sm" />

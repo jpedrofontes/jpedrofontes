@@ -1,0 +1,45 @@
+name: Release and Deploy
+
+on:
+  release:
+    types: [released]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Published stable release tag (vX.Y.Z)
+        required: true
+        type: string
+
+concurrency:
+  group: jpedrofontes-production
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: ${{ github.event_name == 'workflow_dispatch' || (!github.event.release.prerelease && !github.event.release.draft) }}
+    runs-on: [self-hosted, jpedrofontes-prod]
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name || inputs.tag }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Verify release helpers
+        run: |
+          node --test tests/*.test.mjs
+          bash -n scripts/deploy.sh
+
+      - name: Publish CV PDF when inputs change
+        env:
+          TAG: ${{ github.event.release.tag_name || inputs.tag }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TECTONIC_BIN: /opt/jpedrofontes-tools/bin/tectonic
+        run: node scripts/release-cv.mjs "$TAG"
+
+      - name: Deploy release image
+        env:
+          TAG: ${{ github.event.release.tag_name || inputs.tag }}
+        run: bash scripts/deploy.sh "$TAG"

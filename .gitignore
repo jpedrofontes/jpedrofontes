@@ -23,6 +23,9 @@
 # CV build output
 /cv/build/
 
+# Local production runtime
+/internal/
+
 # misc
 .DS_Store
 *.pem

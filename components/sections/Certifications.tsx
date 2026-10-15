@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { RiExternalLinkLine } from "react-icons/ri";
 import SectionHeader from "@/components/SectionHeader";
+import LogoBadge from "@/components/LogoBadge";
 import type { CVData } from "@/lib/cv-data";
 
 export default function Certifications({ certifications }: { certifications: CVData["certifications"] }) {
@@ -20,13 +21,7 @@ export default function Certifications({ certifications }: { certifications: CVD
             transition={{ duration: 0.45, delay: i * 0.08 }}
             className="rounded-xl p-5 bg-card border border-edge hover:border-accent-ring transition-colors duration-200 flex items-start gap-4"
           >
-            <div className="shrink-0 w-14 h-14 rounded-xl overflow-hidden bg-white flex items-center justify-center mt-0.5">
-              {cert.badgeUrl ? (
-                <img src={cert.badgeUrl} alt={cert.name} className="w-12 h-12 object-contain" />
-              ) : (
-                <span className="text-xs font-bold text-accent">CERT</span>
-              )}
-            </div>
+            <LogoBadge src={cert.badgeUrl} alt={cert.issuer} size="lg" />
 
             <div className="flex-1 min-w-0">
               <div className="flex flex-wrap items-start justify-between gap-2">

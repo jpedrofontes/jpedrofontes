@@ -31,8 +31,6 @@ export default function Experience({ experiences }: { experiences: CVData["exper
         <div className="absolute left-1 top-2 bottom-2 w-px bg-edge" />
 
         {experiences.map((group, gi) => {
-          const multiRole = group.roles.length > 1;
-
           return (
             <motion.div
               key={gi}
@@ -66,42 +64,19 @@ export default function Experience({ experiences }: { experiences: CVData["exper
                   </div>
                 </div>
 
-                {/* ── Roles ──────────────────────────────────────── */}
-                {multiRole ? (
-                  /* Multiple roles: nested sub-thread */
-                  <div className="relative pl-5 border-l border-edge ml-2">
-                    {group.roles.map((role, ri) => (
-                      <div key={ri} className="relative mb-4 last:mb-0">
-                        {/* Role dot on sub-spine */}
-                        <div
-                          className="absolute -left-[25px] top-[22px] w-2 h-2 rounded-full bg-bg"
-                          style={{ border: "1.5px solid var(--text-quiet)" }}
-                        />
-
-                        <div className="rounded-xl p-4 bg-card border border-edge hover:border-accent-ring transition-colors duration-200">
-                          <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
-                            <p className="font-semibold text-sm text-ink">{role.title}</p>
-                            <span className="text-xs px-2.5 py-1 rounded-full text-quiet bg-bg border border-edge shrink-0">
-                              {role.start} – {role.end ?? "Present"}
-                            </span>
-                          </div>
-                          <p className="text-xs text-quiet leading-relaxed">{role.description}</p>
-                        </div>
+                <div className="rounded-xl p-4 bg-card border border-edge hover:border-accent-ring transition-colors duration-200">
+                  <div className="space-y-3">
+                    {group.roles.map((role) => (
+                      <div key={`${role.title}-${role.start}`} className="flex flex-wrap items-start justify-between gap-2">
+                        <p className="font-semibold text-sm text-ink">{role.title}</p>
+                        <span className="text-xs px-2.5 py-1 rounded-full text-quiet bg-bg border border-edge shrink-0">
+                          {role.start} – {role.end ?? "Present"}
+                        </span>
                       </div>
                     ))}
                   </div>
-                ) : (
-                  /* Single role: inline card */
-                  <div className="rounded-xl p-4 bg-card border border-edge hover:border-accent-ring transition-colors duration-200">
-                    <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
-                      <p className="font-semibold text-sm text-ink">{group.roles[0].title}</p>
-                      <span className="text-xs px-2.5 py-1 rounded-full text-quiet bg-bg border border-edge shrink-0">
-                        {group.roles[0].start} – {group.roles[0].end ?? "Present"}
-                      </span>
-                    </div>
-                    <p className="text-xs text-quiet leading-relaxed">{group.roles[0].description}</p>
-                  </div>
-                )}
+                  <p className="text-xs text-quiet leading-relaxed mt-3">{group.description}</p>
+                </div>
               </div>
             </motion.div>
           );

@@ -10,20 +10,18 @@ export const cv = {
       company: "Loka Inc.",
       logo: "/logos/loka.jpg",
       location: "Lisbon, Portugal",
+      description:
+        "Develop scalable backend systems and REST APIs in Python and FastAPI. Use Docker and cloud technologies to deliver production services with a focus on performance, reliability, security, and observability, while providing on-call support. Promoted to Senior Backend Engineer in October 2026.",
       roles: [
         {
           title: "Senior Backend Engineer",
           start: "Oct 2026",
           end: null as string | null,
-          description:
-            "Promoted to Senior Backend Engineer. Develop scalable backend systems and REST APIs in Python and FastAPI, with production responsibilities covering reliability, security, observability, and on-call support.",
         },
         {
           title: "Advanced Backend Engineer",
           start: "Sep 2024",
           end: "Sep 2026" as string | null,
-          description:
-                  "Developing scalable and maintainable backend systems using Python and FastAPI. Designed and implemented robust RESTful APIs with a focus on high performance, reliability, security, and observability. Utilized Docker and cloud technologies in production environments while providing on-call support.",
         },
       ],
     },
@@ -31,13 +29,13 @@ export const cv = {
       company: "Swoove Studios",
       logo: "/logos/swoove.jpg",
       location: "Antwerp, Belgium",
+      description:
+        "Developed pose-estimation and reconstruction tools in Python and PyTorch to improve animation quality, integrating the results with procedural animation in Unity. Built an animation-search system combining Python-based natural language processing with Azure services.",
       roles: [
         {
           title: "R&D Engineer",
           start: "Jul 2023",
           end: "Aug 2024" as string | null,
-          description:
-                  "Within the R&D department, played a key role in elevating animation quality through innovative AI solutions. Leveraged Python expertise to develop advanced Pose Estimation and Reconstruction tools, utilizing PyTorch and integrating with Procedural Animation in Unity. Engineered a cutting-edge animation search system by combining Python-based NLP with Azure.",
         },
       ],
     },
@@ -45,20 +43,18 @@ export const cv = {
       company: "Accenture Portugal",
       logo: "/logos/accenture.jpg",
       location: "Braga, Portugal",
+      description:
+        "Consulted for Sky in telecommunications (September–December 2021), gaining hands-on Java backend experience, then worked on Worten's Golang/AWS order-tracking system (January 2022–June 2023). Contributed system enhancements and on-call troubleshooting support, and was promoted to Senior Analyst in January 2023.",
       roles: [
         {
           title: "Senior Analyst",
           start: "Jan 2023",
           end: "Jun 2023" as string | null,
-          description:
-            "Promoted to Senior Analyst. Continued on the Worten engagement, contributing to the order tracking system built on Golang and AWS. Drove system improvements and provided on-call support during the final phase of the project.",
         },
         {
           title: "Analyst",
           start: "Sep 2021",
           end: "Dec 2022" as string | null,
-          description:
-            "Consulted across two clients: Sky (Sep 2021 – Dec 2021) in telecommunications and Worten (Jan 2022 – Dec 2022) in retail. Gained hands-on Java backend experience, managed a critical order tracking system using Golang and AWS, and contributed to system enhancements with on-call troubleshooting support.",
         },
       ],
     },
@@ -66,20 +62,18 @@ export const cv = {
         company: "CCG/ZGDV Institute",
       logo: "/logos/ccg.jpg",
       location: "Guimarães, Portugal",
+      description:
+        "Developed Python-based AI and computer-vision solutions for EU-funded projects in criminal investigation and Industry 4.0, connecting academic research with practical applications. Collaborated with multidisciplinary research teams and mentored incoming research fellows. Advanced from Research Fellow to Senior AI Researcher in October 2018.",
       roles: [
         {
           title: "Senior AI Researcher",
           start: "Oct 2018",
           end: "Jul 2021" as string | null,
-          description:
-                  "Led AI research within the CVIG department on EU-funded projects focused on Industry 4.0 and intelligent systems. Developed production-ready Python solutions bridging academic research and real-world applications. Mentored incoming research fellows and shaped the team's AI methodology across multiple project domains.",
         },
         {
           title: "Research Fellow",
           start: "Oct 2017",
           end: "Oct 2018" as string | null,
-          description:
-                "Joined as a Research Fellow in the CVIG department contributing to EU-funded projects at the intersection of AI and criminal investigation. Developed Python-based machine-learning solutions and collaborated with multidisciplinary research teams.",
         },
       ],
     },
@@ -215,7 +209,7 @@ export const cv = {
     {
       name: "AWS Certified Cloud Practitioner",
       issuer: "Amazon Web Services",
-      badgeUrl: "https://images.credly.com/size/110x110/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png",
+      badgeUrl: "/logos/aws.png",
       date: "Aug 2024",
       description:
         "Foundational understanding of IT services and their uses in the AWS Cloud. Demonstrated cloud fluency and foundational AWS knowledge.",
