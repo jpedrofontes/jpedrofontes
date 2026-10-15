@@ -1,13 +1,12 @@
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
-import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { PDF_NAME } from "../lib/cv-release.mjs";
 
 export { PDF_NAME };
-export const MANIFEST_NAME = "CV_JoaoPedroFontes.json";
 export const COMPILER_VERSION = "0.17.0";
 
 export function digest(value) {
@@ -31,10 +30,11 @@ export function validPdf(bytes) {
   return bytes.subarray(0, 5).toString() === "%PDF-";
 }
 
-export async function publishCv({ tag, root, repository, token, apiUrl = "https://api.github.com", compile }) {
+export async function publishCv({ tag, root, repository, token, apiUrl = "https://api.github.com", cacheDir, compile }) {
   if (!/^v\d+\.\d+\.\d+$/.test(tag)) throw new Error("A stable vX.Y.Z tag is required");
   if (!token) throw new Error("GITHUB_TOKEN is required");
   if (!/^[\w.-]+\/[\w.-]+$/.test(repository)) throw new Error("Invalid repository");
+  if (!cacheDir) throw new Error("A local CV metadata cache directory is required");
 
   async function request(url, options = {}) {
     const response = await fetch(url, {
@@ -57,12 +57,15 @@ export async function publishCv({ tag, root, repository, token, apiUrl = "https:
   const sourceHash = await fingerprint(root);
 
   async function previousPdf(candidate) {
-    const manifestAsset = candidate.assets.find(asset => asset.name === MANIFEST_NAME);
     const pdfAsset = candidate.assets.find(asset => asset.name === PDF_NAME);
-    if (!manifestAsset || !pdfAsset) return null;
-    const manifest = await (await request(manifestAsset.url, {
-      headers: { Accept: "application/octet-stream" },
-    })).json();
+    if (!pdfAsset) return null;
+    let manifest;
+    try {
+      manifest = JSON.parse(await readFile(path.join(cacheDir, `${candidate.id}.json`), "utf8"));
+    } catch (error) {
+      if (error.code === "ENOENT") return null;
+      throw error;
+    }
     if (manifest.schema !== 1 || manifest.sourceHash !== sourceHash || manifest.compiler !== COMPILER_VERSION) return null;
     const bytes = Buffer.from(await (await request(pdfAsset.url, {
       headers: { Accept: "application/octet-stream" },
@@ -100,17 +103,13 @@ export async function publishCv({ tag, root, repository, token, apiUrl = "https:
     tag,
     reusedFrom,
   };
-  const uploads = [
-    [PDF_NAME, pdf, "application/pdf"],
-    [MANIFEST_NAME, Buffer.from(`${JSON.stringify(manifest, null, 2)}\n`), "application/json"],
-  ];
-  for (const [name, bytes, contentType] of uploads) {
-    const existing = release.assets.find(asset => asset.name === name);
-    if (existing) await request(existing.url, { method: "DELETE" });
-    const url = new URL(release.upload_url.split("{")[0]);
-    url.searchParams.set("name", name);
-    await request(url, { method: "POST", headers: { "Content-Type": contentType }, body: bytes });
-  }
+  const existing = release.assets.find(asset => asset.name === PDF_NAME);
+  if (existing) await request(existing.url, { method: "DELETE" });
+  const url = new URL(release.upload_url.split("{")[0]);
+  url.searchParams.set("name", PDF_NAME);
+  await request(url, { method: "POST", headers: { "Content-Type": "application/pdf" }, body: pdf });
+  await mkdir(cacheDir, { recursive: true });
+  await writeFile(path.join(cacheDir, `${release.id}.json`), `${JSON.stringify(manifest, null, 2)}\n`, { mode: 0o600 });
   return { action: reusedFrom ? "reused" : "compiled", sourceHash, reusedFrom };
 }
 
@@ -126,6 +125,7 @@ async function main() {
     root,
     repository: process.env.GITHUB_REPOSITORY || "jpedrofontes/jpedrofontes",
     token: process.env.GITHUB_TOKEN,
+    cacheDir: process.env.CV_METADATA_DIR || "/home/admin/docker/jpedrofontes/internal/production/cv-cache",
     compile: async () => {
       const output = await mkdtemp(path.join(tmpdir(), "jpedrofontes-cv-"));
       try {

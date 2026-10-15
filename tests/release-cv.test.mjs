@@ -1,15 +1,17 @@
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
 import { createServer } from "node:http";
-import { mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
+import { mkdtemp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { test } from "node:test";
-import { COMPILER_VERSION, MANIFEST_NAME, PDF_NAME, digest, fingerprint, publishCv } from "../scripts/release-cv.mjs";
+import { COMPILER_VERSION, PDF_NAME, digest, fingerprint, publishCv } from "../scripts/release-cv.mjs";
 
 async function fixture(context) {
   const root = await mkdtemp(path.join(tmpdir(), "cv-release-test-"));
   await mkdir(path.join(root, "cv"));
+  const cacheDir = path.join(root, "cache");
+  await mkdir(cacheDir);
   await writeFile(path.join(root, "cv/CV_JoaoPedroFontes.tex"), "CV source");
   execFileSync("git", ["init", "--quiet"], { cwd: root });
   execFileSync("git", ["add", "cv"], { cwd: root });
@@ -40,49 +42,61 @@ async function fixture(context) {
     await new Promise(resolve => server.close(resolve));
     await rm(root, { recursive: true, force: true });
   });
-  function addAssets(release, sourceHash, pdf = Buffer.from("%PDF-1.7\nverified PDF")) {
+  async function addAssets(release, sourceHash, pdf = Buffer.from("%PDF-1.7\nverified PDF")) {
     const manifest = { schema: 1, compiler: COMPILER_VERSION, sourceHash, pdfHash: digest(pdf) };
-    release.assets = [PDF_NAME, MANIFEST_NAME].map((name, index) => {
-      const url = `${baseUrl}/assets/${release.id}-${index}`;
-      assets.set(new URL(url).pathname, index === 0 ? pdf : JSON.stringify(manifest));
-      return { name, url };
-    });
+    const url = `${baseUrl}/assets/${release.id}-0`;
+    assets.set(new URL(url).pathname, pdf);
+    release.assets = [{ name: PDF_NAME, url }];
+    await writeFile(path.join(cacheDir, `${release.id}.json`), JSON.stringify(manifest));
   }
-  const options = { tag: "v1.1.0", root, repository: "owner/repo", token: "test-token", apiUrl: baseUrl };
+  const options = { tag: "v1.1.0", root, repository: "owner/repo", token: "test-token", apiUrl: baseUrl, cacheDir };
   return { root, current, prior, uploads, assets, addAssets, options };
 }
 
-test("first release compiles and publishes a PDF and provenance manifest", async context => {
+test("first release publishes only a PDF and keeps its metadata locally", async context => {
   const { options, uploads } = await fixture(context);
   let builds = 0;
   const result = await publishCv({ ...options, compile: async () => { builds += 1; return Buffer.from("%PDF-1.7\nnew PDF"); } });
   assert.equal(result.action, "compiled");
   assert.equal(builds, 1);
-  assert.equal(uploads.size, 2);
-  const manifest = JSON.parse(uploads.get(MANIFEST_NAME));
+  assert.deepEqual([...uploads.keys()], [PDF_NAME]);
+  const manifest = JSON.parse(await readFile(path.join(options.cacheDir, "2.json"), "utf8"));
   assert.equal(manifest.pdfHash, digest(uploads.get(PDF_NAME)));
 });
 
 test("unchanged CV reuses a prior stable PDF on the new release", async context => {
   const { options, uploads, prior, addAssets, root } = await fixture(context);
-  addAssets(prior, await fingerprint(root));
+  await addAssets(prior, await fingerprint(root));
   const result = await publishCv({ ...options, compile: async () => { throw new Error("Must not compile"); } });
   assert.equal(result.action, "reused");
   assert.equal(result.reusedFrom, "v1.0.0");
-  assert.equal(uploads.size, 2);
+  assert.deepEqual([...uploads.keys()], [PDF_NAME]);
 });
 
 test("rerunning a completed release does not compile or upload again", async context => {
   const { options, uploads, current, addAssets, root } = await fixture(context);
-  addAssets(current, await fingerprint(root));
+  await addAssets(current, await fingerprint(root));
   const result = await publishCv({ ...options, compile: async () => { throw new Error("Must not compile"); } });
   assert.equal(result.action, "unchanged");
   assert.equal(uploads.size, 0);
 });
 
+test("missing local metadata recompiles instead of trusting an unverified PDF", async context => {
+  const { options, prior, addAssets, root } = await fixture(context);
+  await addAssets(prior, await fingerprint(root));
+  await rm(path.join(options.cacheDir, "1.json"));
+  let builds = 0;
+  const result = await publishCv({ ...options, compile: async () => {
+    builds += 1;
+    return Buffer.from("%PDF-1.7\nrebuilt PDF");
+  } });
+  assert.equal(result.action, "compiled");
+  assert.equal(builds, 1);
+});
+
 test("changed CV inputs cause a fresh compilation", async context => {
   const { options, prior, addAssets, root } = await fixture(context);
-  addAssets(prior, await fingerprint(root));
+  await addAssets(prior, await fingerprint(root));
   await writeFile(path.join(root, "cv/CV_JoaoPedroFontes.tex"), "Updated source");
   const result = await publishCv({ ...options, compile: async () => Buffer.from("%PDF-1.7\nupdated PDF") });
   assert.equal(result.action, "compiled");
@@ -90,7 +104,7 @@ test("changed CV inputs cause a fresh compilation", async context => {
 
 test("corrupt prior assets are rejected rather than republished", async context => {
   const { options, prior, assets, addAssets, root } = await fixture(context);
-  addAssets(prior, await fingerprint(root));
+  await addAssets(prior, await fingerprint(root));
   assets.set(new URL(prior.assets[0].url).pathname, Buffer.from("%PDF-1.7\ncorrupted PDF"));
   await assert.rejects(publishCv({ ...options, compile: async () => Buffer.from("%PDF-") }), /Invalid CV asset/);
 });
