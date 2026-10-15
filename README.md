@@ -8,7 +8,7 @@
 
 ---
 
-The LaTeX CV source is in [`cv/CV_JoaoPedroFontes.tex`](cv/CV_JoaoPedroFontes.tex). Generated PDFs and build files in `cv/build/` are ignored by Git.
+[CV (PDF)](https://jpedrofontes.com/api/cv)
 
 ### Releases and Deployment
 
